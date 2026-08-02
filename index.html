@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papyrus — Producător și distribuitor de hârtie | B2B România</title>
+    <meta name="description" content="Papyrus — producător și distribuitor de produse din hârtie pentru companii. Hârtie industrială, role prosop, igienică, șervețele. Ofertă în 2 ore.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F4F2EE'/%3E%3Cpath d='M8 6h16v20H8z' fill='none' stroke='%232B4C5E' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M12 10h8M12 14h8M12 18h5' stroke='%232B4C5E' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FCFBF9;
+            --bg2: #F4F2EE;
+            --surface: #FFFFFF;
+            --accent: #2B4C5E;
+            --accent-hover: #3A6277;
+            --accent-soft: rgba(43, 76, 94, 0.06);
+            --accent-glow: rgba(43, 76, 94, 0.18);
+            --green: #1A7F4F;
+            --green-soft: rgba(26, 127, 79, 0.08);
+            --text: #1A1A1A;
+            --text2: #5A5A5A;
+            --text3: #999999;
+            --border: rgba(0, 0, 0, 0.06);
+            --border2: rgba(0, 0, 0, 0.12);
+            --f-heading: 'Playfair Display', Georgia, serif;
+            --f-body: 'Inter', -apple-system, sans-serif;
+            --f-accent: 'DM Sans', sans-serif;
+            --fs-hero: clamp(2.8rem, 7vw, 4.8rem);
+            --fs-xxl: clamp(2rem, 4.5vw, 3.2rem);
+            --fs-xl: clamp(1.5rem, 3vw, 2rem);
+            --fs-lg: 1.1rem;
+            --fs-md: 0.98rem;
+            --fs-base: 0.93rem;
+            --fs-sm: 0.8rem;
+            --fs-xs: 0.7rem;
+            --sp-1: 0.5rem;
+            --sp-2: 1rem;
+            --sp-3: 2rem;
+            --sp-4: 3.2rem;
+            --sp-5: 5rem;
+            --sp-6: 7rem;
+            --radius: 8px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --ease: cubic-bezier(0.22, 0.7, 0.24, 1);
+            --maxw: 1240px;
+            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            --shadow-elevated: 0 12px 34px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text2);
+            font-family: var(--f-body);
+            font-size: var(--fs-base);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        figure {
+            margin: 0;
+        }
+        button {
+            font: inherit;
+            cursor: pointer;
+        }
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            background: var(--accent);
+            color: #fff;
+            padding: .75rem 1.25rem;
+            z-index: 2000;
+            font-family: var(--f-accent);
+            font-size: var(--fs-xs);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: var(--sp-2);
+            top: var(--sp-2);
+        }
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+        .container {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 var(--sp-3);
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: var(--f-accent);
+            font-size: var(--fs-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .eyebrow .line {
+            width: 26px;
+            height: 1.2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+        h1,
+        h2,
+        h3 {
+            font-family: var(--f-heading);
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+            line-height: 1.12;
+        }
+        .section-head {
+            max-width: 580px;
+            margin-bottom: var(--sp-4);
+        }
+        .section-head h2 {
+            font-size: var(--fs-xxl);
+            margin-top: 0.4rem;
+        }
+        .section-head p {
+            margin-top: 0.9rem;
+            font-size: var(--fs-lg);
+            color: var(--text2);
+            max-width: 48ch;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.85rem 1.8rem;
+            font-family: var(--f-accent);
+            font-size: var(--fs-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            border-radius: 40px;
+            border: 1px solid transparent;
+            transition: all 0.4s var(--ease);
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-solid {
+            background: var(--green);
+            color: #fff;
+        }
+        .btn-solid:hover {
+            background: #1E8F5A;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px -8px rgba(26, 127, 79, 0.35);
+        }
+        .btn-outline {
+            border-color: var(--border2);
+            color: var(--text);
+            background: transparent;
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px -6px var(--accent-soft);
+        }
+        .btn-ghost {
+            padding: 0.5rem 1rem;
+            font-family: var(--f-accent);
+            font-size: var(--fs-xs);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 1.5px solid transparent;
+            transition: border-color 0.35s;
+            border-radius: 0;
+        }
+        .btn-ghost:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Sticky Nav */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+            padding: 1.1rem 0;
+            transition: padding 0.45s var(--ease), background 0.45s var(--ease), border-color 0.45s var(--ease), box-shadow 0.45s var(--ease);
+            border-bottom: 1px solid transparent;
+        }
+        .nav.is-scrolled {
+            padding: 0.7rem 0;
+            background: rgba(252, 251, 249, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-color: var(--border);
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.03);
+        }
+        .nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--f-heading);
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+        .brand svg {
+            width: 30px;
+            height: 30px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--sp-3);
+        }
+        .nav-links a:not(.btn) {
+            font-family: var(--f-accent);
+            font-size: var(--fs-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text2);
+            padding-bottom: 5px;
+            position: relative;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        .nav-links a:not(.btn):hover {
+            color: var(--text);
+        }
+        .nav-links a:not(.btn)::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.4s var(--ease);
+            border-radius: 2px;
+        }
+        .nav-links a:not(.btn):hover::after,
+        .nav-links a.is-active::after {
+            width: 100%;
+        }
+        .nav-links a.is-active {
+            color: var(--text);
+        }
+        .nav-links .btn {
+            margin-left: 0.4rem;
+        }
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 0;
+            padding: 0.4rem;
+            flex-shrink: 0;
+        }
+        .nav-toggle span,
+        .nav-toggle span::before,
+        .nav-toggle span::after {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+            position: relative;
+            border-radius: 2px;
+        }
+        .nav-toggle span::before {
+            position: absolute;
+            top: -8px;
+        }
+        .nav-toggle span::after {
+            position: absolute;
+            top: 8px;
+        }
+        .nav.is-open .nav-toggle span {
+            background: transparent;
+        }
+        .nav.is-open .nav-toggle span::before {
+            transform: translateY(8px) rotate(45deg);
+            background: var(--accent);
+        }
+        .nav.is-open .nav-toggle span::after {
+            transform: translateY(-8px) rotate(-45deg);
+            background: var(--accent);
+        }
+        @media (max-width: 860px) {
+            .container {
+                padding: 0 1.1rem;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                left: auto;
+                width: min(80vw, 320px);
+                height: 100vh;
+                background: var(--bg);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: var(--sp-3);
+                padding: 0 var(--sp-4);
+                transition: right 0.5s var(--ease);
+                border-left: 1px solid var(--border);
+                box-shadow: -8px 0 30px rgba(0, 0, 0, 0.04);
+            }
+            .nav.is-open .nav-links {
+                right: 0;
+            }
+            .nav-links a:not(.btn) {
+                font-size: var(--fs-base);
+            }
+            .nav-links .btn {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 8rem 0 5rem;
+            background: #1A1A1A;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+            filter: brightness(0.7) saturate(0.6);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.35) 50%, rgba(26, 26, 26, 0.65) 100%);
+            z-index: 1;
+        }
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .hero-copy {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s var(--ease) 0.2s forwards;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .hero-copy .eyebrow {
+            margin-bottom: 1.2rem;
+            color: rgba(255, 255, 255, 0.75);
+            justify-content: center;
+        }
+        .hero-copy .eyebrow .line {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .hero-title {
+            font-size: var(--fs-hero);
+            line-height: 1.05;
+            color: #FFFFFF;
+            margin: 0 0 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+        .hero-title span {
+            color: #5CAC7A;
+            font-style: italic;
+        }
+        .hero-sub {
+            font-size: var(--fs-lg);
+            max-width: 55ch;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin: 0 auto;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: var(--sp-3);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-actions .btn-outline {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #fff;
+        }
+        .hero-actions .btn-outline:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .hero-scroll {
+            position: absolute;
+            left: 50%;
+            bottom: 1.8rem;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--f-accent);
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            animation: fadeUp 0.9s var(--ease) 1.6s forwards;
+            z-index: 2;
+        }
+        .hero-scroll svg {
+            width: 16px;
+            height: 22px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(8px);
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: clamp(2rem, 9vw, 3rem);
+            }
+            .hero-sub {
+                font-size: var(--fs-md);
+            }
+        }
+
+        /* Sections */
+        .section {
+            padding: var(--sp-6) 0;
+            position: relative;
+        }
+        .section--alt {
+            background: var(--bg2);
+        }
+        .section--dark {
+            background: #1A1A1A;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .section--dark h2,
+        .section--dark h3 {
+            color: #fff;
+        }
+        .section--dark .section-head p {
+            color: rgba(255, 255, 255, 0.65);
+        }
+        @media (max-width: 860px) {
+            .section {
+                padding: 4rem 0;
+            }
+        }
+
+        /* Advantages */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--sp-3);
+            text-align: center;
+        }
+        .advantage-card {
+            padding: var(--sp-3) var(--sp-2);
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border);
+            transition: transform 0.35s var(--ease);
+        }
+        .advantage-card:hover {
+            transform: translateY(-4px);
+        }
+        .advantage-icon {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .advantage-icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .advantage-card h4 {
+            font-family: var(--f-accent);
+            font-size: var(--fs-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+        .advantage-card p {
+            font-size: var(--fs-xs);
+            color: var(--text3);
+        }
+        @media (max-width: 860px) {
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--sp-2);
+            margin-top: var(--sp-3);
+        }
+        .product-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+            border: 1px solid var(--border);
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-elevated);
+        }
+        .product-card img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+        .product-card-body {
+            padding: var(--sp-2);
+            text-align: center;
+        }
+        .product-card-body h3 {
+            font-size: var(--fs-lg);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+        .product-card-body p {
+            font-size: var(--fs-sm);
+            color: var(--text3);
+            margin-bottom: 0.8rem;
+        }
+        @media (max-width: 860px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--sp-3);
+            text-align: center;
+        }
+        .stat-item .stat-number {
+            font-family: var(--f-heading);
+            font-size: clamp(2.6rem, 5vw, 3.6rem);
+            font-weight: 800;
+            color: #5CAC7A;
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+        .stat-item .stat-label {
+            font-family: var(--f-accent);
+            font-size: var(--fs-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.4rem;
+        }
+        @media (max-width: 860px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--sp-3);
+            }
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--sp-5);
+            align-items: center;
+        }
+        .about-copy p {
+            font-size: var(--fs-md);
+            color: var(--text2);
+            margin-bottom: 1rem;
+            max-width: 48ch;
+        }
+        .about-visual {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-elevated);
+            aspect-ratio: 5/4;
+        }
+        .about-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (max-width: 860px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-visual {
+                order: -1;
+            }
+        }
+
+        /* Process */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--sp-3);
+            text-align: center;
+            position: relative;
+        }
+        .process-step {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-3) var(--sp-2);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        .process-step .step-num {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--f-accent);
+            font-weight: 700;
+            font-size: var(--fs-lg);
+            margin-bottom: 0.8rem;
+        }
+        .process-step h4 {
+            font-family: var(--f-accent);
+            font-size: var(--fs-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+        .process-step p {
+            font-size: var(--fs-xs);
+            color: var(--text3);
+        }
+        @media (max-width: 860px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--sp-3);
+        }
+        .testimonial-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-3);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border);
+        }
+        .testimonial-card .stars {
+            color: #F0A500;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.6rem;
+        }
+        .testimonial-card p {
+            font-size: var(--fs-md);
+            color: var(--text2);
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        .testimonial-card .author {
+            font-family: var(--f-accent);
+            font-size: var(--fs-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text3);
+            font-weight: 500;
+        }
+        @media (max-width: 860px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 520px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Certifications */
+        .certs-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--sp-4);
+            align-items: center;
+        }
+        .cert-badge {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-2) var(--sp-3);
+            font-family: var(--f-accent);
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--text);
+            box-shadow: var(--shadow-card);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cert-badge svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--green);
+            fill: none;
+            stroke-width: 1.8;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--sp-2);
+        }
+        .gallery-grid img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            transition: transform 0.4s var(--ease);
+            cursor: pointer;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+        }
+        @media (max-width: 860px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--sp-2);
+        }
+        .faq-item {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-2) var(--sp-3);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+        .faq-item:hover {
+            box-shadow: var(--shadow-elevated);
+        }
+        .faq-item h4 {
+            font-family: var(--f-accent);
+            font-size: var(--fs-md);
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .faq-item h4 .plus {
+            font-size: 1.4rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .faq-item.open h4 .plus {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s var(--ease), padding-top 0.45s;
+            font-size: var(--fs-sm);
+            color: var(--text2);
+            line-height: 1.6;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding-top: 0.6rem;
+        }
+
+        /* CTA */
+        .cta-block {
+            text-align: center;
+            padding: var(--sp-5) var(--sp-3);
+            background: var(--accent);
+            border-radius: var(--radius-xl);
+            color: #fff;
+            margin: 0 var(--sp-3);
+            max-width: var(--maxw);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-block h2 {
+            color: #fff;
+            font-size: var(--fs-xxl);
+            margin-bottom: 0.6rem;
+        }
+        .cta-block p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: var(--fs-lg);
+            margin-bottom: var(--sp-3);
+            max-width: 50ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-block .btn {
+            background: #fff;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .cta-block .btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1A1A1A;
+            color: rgba(255, 255, 255, 0.65);
+            padding: var(--sp-5) 0 var(--sp-3);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: var(--sp-4);
+            margin-bottom: var(--sp-4);
+        }
+        .footer h4 {
+            font-family: var(--f-accent);
+            font-size: var(--fs-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .footer a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: var(--fs-sm);
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .footer .brand {
+            font-family: var(--f-heading);
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--sp-3);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: var(--fs-xs);
+        }
+        @media (max-width: 860px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 520px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 800;
+            width: 52px;
+            height: 52px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(37, 211, 102, 0.45);
+        }
+        .whatsapp-float svg {
+            width: 26px;
+            height: 26px;
+            fill: #fff;
+        }
+
+        /* Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+        }
+        .reveal.in-view {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+            .reveal,
+            .hero-copy,
+            .hero-scroll {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#continut">Sari la conținut</a>
+
+    <!-- Sticky Header -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <a href="index.html" class="brand">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                    <rect width="32" height="32" rx="6" fill="none" stroke="#2B4C5E" stroke-width="2"/>
+                    <path d="M8 6h16v20H8z" fill="none" stroke="#2B4C5E" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M12 10h8M12 14h8M12 18h5" stroke="#2B4C5E" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                Papyrus
+            </a>
+            <ul class="nav-links">
+                <li><a href="#acasa" class="is-active">Acasă</a></li>
+                <li><a href="#produse">Produse</a></li>
+                <li><a href="#despre">Despre noi</a></li>
+                <li><a href="#proces">Proces</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#oferta" class="btn btn-solid">Solicită ofertă</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Deschide meniul" aria-expanded="false">
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="continut">
+        <!-- 1. HERO -->
+        <header class="hero" id="acasa">
+            <div class="hero-bg">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1600&h=900&fit=crop&auto=format" alt="Depozit de hârtie industrială">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-copy">
+                    <span class="eyebrow"><span class="line"></span>Din 2008 · România</span>
+                    <h1 class="hero-title">Producător și distribuitor de <span>produse din hârtie</span> pentru companii din România</h1>
+                    <p class="hero-sub">Furnizăm hârtie industrială, produse igienico-sanitare și soluții personalizate pentru afaceri, instituții și distribuitori.</p>
+                    <div class="hero-actions">
+                        <a href="#oferta" class="btn btn-solid">🟢 Solicită ofertă</a>
+                        <a href="#produse" class="btn btn-outline">⚪ Vezi produsele</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <svg viewBox="0 0 16 22" aria-hidden="true"><path d="M3 3 L8 10 L13 3" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Derulează
+            </div>
+        </header>
+
+        <!-- 2. DE CE SĂ NE ALEGI -->
+        <section class="section" id="avantaje">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><span class="line"></span>De ce Papyrus</span>
+                    <h2>De ce să ne alegi pe noi</h2>
+                    <p>6 motive pentru care companiile din România colaborează cu noi de peste 15 ani.</p>
+                </div>
+                <div class="advantages-grid reveal">
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 7h10M7 12h10M7 17h6"/></svg></div>
+                        <h4>Producător direct</h4>
+                        <p>Fără intermediari. Cumperi direct de la fabrică.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+                        <h4>Livrare rapidă</h4>
+                        <p>Expediem în 24–48h oriunde în România.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><polyline points="2 12 12 2 22 12"/></svg></div>
+                        <h4>Prețuri competitive</h4>
+                        <p>Cel mai bun raport calitate–preț din piață.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+                        <h4>Stoc permanent</h4>
+                        <p>Depozit propriu. Marfa e mereu pe stoc.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+                        <h4>Parteneriate pe termen lung</h4>
+                        <p>Peste 2000 de clienți activi lunar.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M12 13v6"/><line x1="7" y1="17" x2="17" y2="17"/></svg></div>
+                        <h4>Calitate garantată</h4>
+                        <p>Produse certificate, testate în laborator propriu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PRODUSE PRINCIPALE -->
+        <section class="section section--alt" id="produse">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><span class="line"></span>Gama de produse</span>
+                    <h2>Produsele noastre principale</h2>
+                    <p>Descoperă categoriile de produse din hârtie pentru business-ul tău.</p>
+                </div>
+                <div class="products-grid reveal">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1587037542794-6c5a2f4b5a3f?w=500&h=375&fit=crop&auto=format" alt="Hârtie industrială">
+                        <div class="product-card-body"><h3>Hârtie industrială</h3><p>Rulouri, coli, formate personalizate</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1615800091748-7c3c2c2e4b1e?w=500&h=375&fit=crop&auto=format" alt="Role prosop">
+                        <div class="product-card-body"><h3>Role prosop</h3><p>1 strat, 2 straturi, gofrate</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586486855510-8c0e5ebc9c4d?w=500&h=375&fit=crop&auto=format" alt="Hârtie igienică">
+                        <div class="product-card-body"><h3>Hârtie igienică</h3><p>Role mici, role industriale</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1597733336794-12d05021d3e6?w=500&h=375&fit=crop&auto=format" alt="Șervețele">
+                        <div class="product-card-body"><h3>Șervețele</h3><p>1 strat, 2 straturi, pliate</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1604580864964-3c2e2f3b8e1b?w=500&h=375&fit=crop&auto=format" alt="Lavete">
+                        <div class="product-card-body"><h3>Lavete industriale</h3><p>Celuloză, nețesute, role</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=500&h=375&fit=crop&auto=format" alt="Consumabile">
+                        <div class="product-card-body"><h3>Consumabile</h3><p>Dozatoare, săpun, saci menajeri</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CIFRE -->
+        <section class="section section--dark" id="cifre">
+            <div class="container">
+                <div class="section-head reveal" style="margin:0 auto 3rem;text-align:center;">
+                    <span class="eyebrow" style="color:rgba(255,255,255,0.55);"><span class="line" style="background:rgba(255,255,255,0.4);"></span>Încredere</span>
+                    <h2>Cifre care inspiră încredere</h2>
+                </div>
+                <div class="stats-grid reveal">
+                    <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Ani experiență</div></div>
+                    <div class="stat-item"><div class="stat-number">2000+</div><div class="stat-label">Clienți activi</div></div>
+                    <div class="stat-item"><div class="stat-number">5000+</div><div class="stat-label">Livrări anual</div></div>
+                    <div class="stat-item"><div class="stat-number">99%</div><div class="stat-label">Clienți mulțumiți</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. DESPRE NOI -->
+        <section class="section" id="despre">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-copy reveal">
+                        <span class="eyebrow"><span class="line"></span>Despre companie</span>
+                        <h2 style="font-size:var(--fs-xxl);margin-top:0.5rem;">Suntem producători, nu doar distribuitori</h2>
+                        <p style="margin-top:1.4rem;">Papyrus este o companie românească fondată în 2008, specializată în producția și distribuția de produse din hârtie pentru sectorul B2B. Deținem o fabrică modernă în Cluj-Napoca și un centru logistic care acoperă toată România.</p>
+                        <p>Lucrăm cu tipografii, retaileri, distribuitori, instituții publice și companii din HoReCa. Fiecare client primește un consultant dedicat și oferte personalizate în funcție de volum și frecvență.</p>
+                        <a href="#despre" class="btn btn-ghost" style="margin-top:0.4rem;">Citește mai multe →</a>
+                    </div>
+                    <div class="about-visual reveal">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&h=500&fit=crop&auto=format" alt="Fabrica Papyrus">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PROCES -->
+        <section class="section section--alt" id="proces">
+            <div class="container">
+                <div class="section-head reveal" style="margin:0 auto 3rem;text-align:center;">
+                    <span class="eyebrow"><span class="line"></span>Colaborare</span>
+                    <h2>Procesul de colaborare</h2>
+                    <p>Simplu, rapid, transparent. Așa lucrăm cu fiecare client nou.</p>
+                </div>
+                <div class="process-grid reveal">
+                    <div class="process-step"><div class="step-num">1</div><h4>Ne contactezi</h4><p>Completezi formularul sau ne suni direct.</p></div>
+                    <div class="process-step"><div class="step-num">2</div><h4>Primești oferta</h4><p>În maxim 2 ore, ofertă personalizată pe email.</p></div>
+                    <div class="process-step"><div class="step-num">3</div><h4>Confirmi comanda</h4><p>Stabilești cantitatea și data livrării.</p></div>
+                    <div class="process-step"><div class="step-num">4</div><h4>Livrăm rapid</h4><p>Expediem în 24–48h. Tracking în timp real.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. TESTIMONIALE -->
+        <section class="section" id="testimoniale">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><span class="line"></span>Testimoniale</span>
+                    <h2>Ce spun clienții noștri</h2>
+                    <p>Peste 2000 de companii ne recomandă cu încredere.</p>
+                </div>
+                <div class="testimonials-grid reveal">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Livrare rapidă și produse foarte bune. Colaborăm de 3 ani fără nicio problemă."</p>
+                        <span class="author">SC CleanPro SRL, București</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Prețuri excelente pentru rolele industriale. Suntem distribuitori și clienții noștri sunt foarte mulțumiți."</p>
+                        <span class="author">SC Papetăria Global SRL, Timișoara</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Am redus costurile cu 15% de când am trecut la Papyrus. Recomand cu încredere."</p>
+                        <span class="author">SC Hotel Transilvania SA, Cluj</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Foarte profesioniști. Ofertele vin rapid, marfa e mereu pe stoc. Partener de încredere."</p>
+                        <span class="author">SC Logistic Expert SRL, Brașov</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Calitate constantă la hârtia igienică industrială. Nu am avut niciodată reclamații."</p>
+                        <span class="author">SC Facility Management SA, Iași</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Cel mai bun furnizor de lavete industriale. Prețul e foarte competitiv."</p>
+                        <span class="author">SC AutoService Pro SRL, Craiova</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CERTIFICĂRI -->
+        <section class="section section--alt" id="certificari">
+            <div class="container">
+                <div class="section-head reveal" style="margin:0 auto 3rem;text-align:center;">
+                    <span class="eyebrow"><span class="line"></span>Calitate</span>
+                    <h2>Certificări</h2>
+                    <p>Produsele noastre respectă cele mai înalte standarde internaționale.</p>
+                </div>
+                <div class="certs-row reveal">
+                    <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>ISO 9001</div>
+                    <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 18H3"/></svg>FSC</div>
+                    <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 7h10M7 12h10M7 17h6"/></svg>PEFC</div>
+                    <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M12 13v6"/><line x1="7" y1="17" x2="17" y2="17"/></svg>HACCP</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. GALERIE -->
+        <section class="section" id="galerie">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><span class="line"></span>Galerie</span>
+                    <h2>Imagini din fabrică și depozit</h2>
+                    <p>O privire în spatele producției noastre.</p>
+                </div>
+                <div class="gallery-grid reveal">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop&auto=format" alt="Depozit hârtie" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop&auto=format" alt="Fabrica" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1587037542794-6c5a2f4b5a3f?w=400&h=300&fit=crop&auto=format" alt="Utilaje" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&h=300&fit=crop&auto=format" alt="Paleți" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1586486855510-8c0e5ebc9c4d?w=400&h=300&fit=crop&auto=format" alt="Produse" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1615800091748-7c3c2c2e4b1e?w=400&h=300&fit=crop&auto=format" alt="Role hârtie" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1597733336794-12d05021d3e6?w=400&h=300&fit=crop&auto=format" alt="Ambalare" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1604580864964-3c2e2f3b8e1b?w=400&h=300&fit=crop&auto=format" alt="Livrare" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FAQ -->
+        <section class="section section--alt" id="faq">
+            <div class="container">
+                <div class="section-head reveal" style="margin:0 auto 3rem;text-align:center;">
+                    <span class="eyebrow"><span class="line"></span>Întrebări</span>
+                    <h2>Întrebări frecvente</h2>
+                </div>
+                <div class="faq-list reveal">
+                    <div class="faq-item">
+                        <h4>Livrați în toată România? <span class="plus">+</span></h4>
+                        <div class="faq-answer"><p>Da, livrăm în toate județele României, prin flotă proprie și parteneri de curierat. Termenul standard este de 24–48h.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Care este cantitatea minimă de comandă? <span class="plus">+</span></h4>
+                        <div class="faq-answer"><p>Lucrăm atât cu volume mari (tiruri complete), cât și cu comenzi mai mici. Cantitatea minimă depinde de produs — discutăm și găsim soluția optimă.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h4>În cât timp livrați? <span class="plus">+</span></h4>
+                        <div class="faq-answer"><p>Majoritatea comenzilor sunt livrate în 24–48 de ore de la confirmare. Pentru comenzi mari sau personalizate, termenul se stabilește împreună.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Oferiți prețuri pentru distribuitori? <span class="plus">+</span></h4>
+                        <div class="faq-answer"><p>Da, avem o grilă specială de prețuri pentru distribuitori și parteneri pe termen lung. Contactați-ne pentru o ofertă personalizată.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Faceți produse personalizate? <span class="plus">+</span></h4>
+                        <div class="faq-answer"><p>Da, putem personaliza dimensiuni, gramaje, ambalaje și chiar branding-ul. Discutăm cerințele tale și îți facem o ofertă.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. CTA -->
+        <section class="section" id="oferta">
+            <div class="container">
+                <div class="cta-block reveal">
+                    <h2>Ai nevoie de produse din hârtie?</h2>
+                    <p>Solicită acum o ofertă personalizată. Îți răspundem în maxim 2 ore.</p>
+                    <a href="#" class="btn">🟢 Cere ofertă</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 12. FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand" style="display:flex;align-items:center;gap:0.5rem;">
+                        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+                            <rect width="32" height="32" rx="6" fill="none" stroke="#fff" stroke-width="2"/>
+                            <path d="M8 6h16v20H8z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+                            <path d="M12 10h8M12 14h8M12 18h5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+                        </svg>
+                        Papyrus
+                    </div>
+                    <p style="margin-top:0.8rem;font-size:var(--fs-sm);max-width:28ch;">Producător și distribuitor de produse din hârtie pentru companii din România. Din 2008.</p>
+                </div>
+                <div>
+                    <h4>Link-uri rapide</h4>
+                    <a href="#produse">Produse</a>
+                    <a href="#despre">Despre noi</a>
+                    <a href="#proces">Proces</a>
+                    <a href="#galerie">Galerie</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="#">Politica GDPR</a>
+                    <a href="#">Termeni și condiții</a>
+                    <a href="#">Politica de cookies</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p style="font-size:var(--fs-sm);margin-bottom:0.3rem;">📞 <a href="tel:+40745123456">+40 745 123 456</a></p>
+                    <p style="font-size:var(--fs-sm);margin-bottom:0.3rem;">✉️ <a href="mailto:office@papyrus.ro">office@papyrus.ro</a></p>
+                    <p style="font-size:var(--fs-sm);margin-bottom:0.3rem;">📍 Str. Fabricii 23, Cluj-Napoca</p>
+                    <p style="font-size:var(--fs-sm);">🕗 Luni – Vineri: 08:00 – 17:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Papyrus · Cluj-Napoca. Toate drepturile rezervate.</span>
+                <span>Site realizat cu ♥ pentru industria hârtiei.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/40745123456" class="whatsapp-float" aria-label="Chat pe WhatsApp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.3 15.2c-.3.8-1.2 1.4-2 1.5-1.2.2-2.5-.2-3.7-1-1-.7-1.9-1.6-2.6-2.6-.8-1.2-1.2-2.5-1-3.7.1-.8.7-1.7 1.5-2 .3-.1.6 0 .8.2l1.2 1.7c.2.3.1.7-.1 1-.2.2-.5.5-.6.7-.1.3 0 .7.2 1 .5.8 1.2 1.5 2 2 .5.3.7.3 1 .2.2-.1.5-.4.7-.6.3-.2.7-.3 1-.1l1.7 1.2c.2.2.3.5.1.8z"/><path d="M21.5 12.3c0 5.3-4.3 9.6-9.6 9.6-1.7 0-3.3-.4-4.7-1.2L2 22l1.3-5.2c-.8-1.4-1.2-3-1.2-4.7 0-5.3 4.3-9.6 9.6-9.6 5.3 0 9.6 4.3 9.6 9.6z"/></svg>
+    </a>
+
+    <script>
+        (function() {
+            var nav = document.querySelector('.nav');
+            window.addEventListener('scroll', function() {
+                nav.classList.toggle('is-scrolled', window.scrollY > 40);
+            }, { passive: true });
+            var toggle = document.querySelector('.nav-toggle');
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('is-open');
+                toggle.setAttribute('aria-expanded', nav.classList.contains('is-open'));
+            });
+            document.querySelectorAll('.nav-links a').forEach(function(l) {
+                l.addEventListener('click', function() { nav.classList.remove('is-open'); });
+            });
+            var sections = document.querySelectorAll('section[id], header[id]');
+            var links = document.querySelectorAll('.nav-links a[href^="#"]');
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                    if (e.isIntersecting) {
+                        links.forEach(function(link) { link.classList.remove('is-active'); });
+                        var active = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+                        if (active) active.classList.add('is-active');
+                    }
+                });
+            }, { rootMargin: '-30% 0px -60% 0px' });
+            sections.forEach(function(s) { observer.observe(s); });
+            document.querySelectorAll('.reveal').forEach(function(el) {
+                var io = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        el.classList.add('in-view');
+                        io.unobserve(el);
+                    }
+                }, { threshold: 0.08 });
+                io.observe(el);
+            });
+            // FAQ accordion
+            document.querySelectorAll('.faq-item').forEach(function(item) {
+                item.addEventListener('click', function() {
+                    var wasOpen = item.classList.contains('open');
+                    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+                    if (!wasOpen) item.classList.add('open');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

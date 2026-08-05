@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Papyrus — Producător și distribuitor de hârtie | B2B România</title>
-    <meta name="description" content="Papyrus — producător și distribuitor de produse din hârtie pentru companii. Hârtie industrială, role prosop, igienică, șervețele. Ofertă în 2 ore.">
+    <title>Duo Cart — Producător și distribuitor de hârtie</title>
+    <meta name="description" content="Duo Cart — producător și distribuitor de produse din hârtie pentru companii. Hârtie industrială, role prosop, igienică, șervețele. Ofertă în 2 ore.">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F4F2EE'/%3E%3Cpath d='M8 6h16v20H8z' fill='none' stroke='%232B4C5E' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M12 10h8M12 14h8M12 18h5' stroke='%232B4C5E' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +40,8 @@
             --sp-2: 1rem;
             --sp-3: 2rem;
             --sp-4: 3.2rem;
-            --sp-5: 5rem;
-            --sp-6: 7rem;
+            --sp-5: 3.2rem;
+            --sp-6: 4.5rem;
             --radius: 8px;
             --radius-lg: 16px;
             --radius-xl: 24px;
@@ -153,7 +153,7 @@
         }
         .section-head {
             max-width: 580px;
-            margin-bottom: var(--sp-4);
+            margin-bottom: var(--sp-3);
         }
         .section-head h2 {
             font-size: var(--fs-xxl);
@@ -249,10 +249,42 @@
             font-size: 1.35rem;
             color: var(--text);
             letter-spacing: -0.01em;
+            transition: color 0.3s;
+            white-space: nowrap;
         }
-        .brand svg {
-            width: 30px;
-            height: 30px;
+        .brand img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+        .nav:not(.is-scrolled) .brand {
+            color: #fff;
+        }
+        .nav:not(.is-scrolled) .nav-links a:not(.btn) {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .nav:not(.is-scrolled) .nav-links a.is-active {
+            color: #fff;
+        }
+        .nav:not(.is-scrolled) .nav-toggle span,
+        .nav:not(.is-scrolled) .nav-toggle span::before,
+        .nav:not(.is-scrolled) .nav-toggle span::after {
+            background: #fff;
+        }
+        .nav.is-scrolled .brand {
+            color: var(--text);
+        }
+        .nav.is-scrolled .nav-links a:not(.btn) {
+            color: var(--text2);
+        }
+        .nav.is-scrolled .nav-links a.is-active {
+            color: var(--text);
+        }
+        .nav.is-scrolled .nav-toggle span,
+        .nav.is-scrolled .nav-toggle span::before,
+        .nav.is-scrolled .nav-toggle span::after {
+            background: var(--text);
         }
         .nav-links {
             display: flex;
@@ -264,7 +296,6 @@
             font-size: var(--fs-xs);
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: var(--text2);
             padding-bottom: 5px;
             position: relative;
             transition: color 0.3s;
@@ -287,9 +318,6 @@
         .nav-links a:not(.btn):hover::after,
         .nav-links a.is-active::after {
             width: 100%;
-        }
-        .nav-links a.is-active {
-            color: var(--text);
         }
         .nav-links .btn {
             margin-left: 0.4rem;
@@ -361,8 +389,12 @@
             }
             .nav-links a:not(.btn) {
                 font-size: var(--fs-base);
+                color: var(--text2);
             }
-            .nav-links .btn {
+            .nav-links a.is-active {
+                color: var(--text);
+            }
+            .nav .btn {
                 margin-left: 0;
                 margin-top: 0.5rem;
             }
@@ -411,14 +443,6 @@
             max-width: 780px;
             margin: 0 auto;
         }
-        .hero-copy .eyebrow {
-            margin-bottom: 1.2rem;
-            color: rgba(255, 255, 255, 0.75);
-            justify-content: center;
-        }
-        .hero-copy .eyebrow .line {
-            background: rgba(255, 255, 255, 0.5);
-        }
         .hero-title {
             font-size: var(--fs-hero);
             line-height: 1.05;
@@ -459,11 +483,8 @@
                 transform: none;
             }
         }
-        .hero-scroll {
-            position: absolute;
-            left: 50%;
-            bottom: 1.8rem;
-            transform: translateX(-50%);
+        .hero-scroll-inline {
+            margin-top: var(--sp-4);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -475,9 +496,8 @@
             color: rgba(255, 255, 255, 0.5);
             opacity: 0;
             animation: fadeUp 0.9s var(--ease) 1.6s forwards;
-            z-index: 2;
         }
-        .hero-scroll svg {
+        .hero-scroll-inline svg {
             width: 16px;
             height: 22px;
             animation: bounce 2s ease-in-out infinite;
@@ -502,7 +522,7 @@
 
         /* Sections */
         .section {
-            padding: var(--sp-6) 0;
+            padding: 4rem 0;
             position: relative;
         }
         .section--alt {
@@ -521,7 +541,7 @@
         }
         @media (max-width: 860px) {
             .section {
-                padding: 4rem 0;
+                padding: 2.8rem 0;
             }
         }
 
@@ -529,11 +549,11 @@
         .advantages-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--sp-3);
+            gap: var(--sp-2);
             text-align: center;
         }
         .advantage-card {
-            padding: var(--sp-3) var(--sp-2);
+            padding: var(--sp-2) var(--sp-2);
             background: var(--surface);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-card);
@@ -544,13 +564,13 @@
             transform: translateY(-4px);
         }
         .advantage-icon {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             display: flex;
             justify-content: center;
         }
         .advantage-icon svg {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             stroke: var(--accent);
             fill: none;
             stroke-width: 1.5;
@@ -586,7 +606,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--sp-2);
-            margin-top: var(--sp-3);
+            margin-top: var(--sp-2);
         }
         .product-card {
             background: var(--surface);
@@ -634,7 +654,7 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: var(--sp-3);
+            gap: var(--sp-2);
             text-align: center;
         }
         .stat-item .stat-number {
@@ -656,7 +676,7 @@
         @media (max-width: 860px) {
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: var(--sp-3);
+                gap: var(--sp-2);
             }
         }
 
@@ -664,7 +684,7 @@
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--sp-5);
+            gap: var(--sp-4);
             align-items: center;
         }
         .about-copy p {
@@ -698,14 +718,14 @@
         .process-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: var(--sp-3);
+            gap: var(--sp-2);
             text-align: center;
             position: relative;
         }
         .process-step {
             background: var(--surface);
             border-radius: var(--radius-lg);
-            padding: var(--sp-3) var(--sp-2);
+            padding: var(--sp-2) var(--sp-2);
             box-shadow: var(--shadow-card);
             border: 1px solid var(--border);
             position: relative;
@@ -752,12 +772,12 @@
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--sp-3);
+            gap: var(--sp-2);
         }
         .testimonial-card {
             background: var(--surface);
             border-radius: var(--radius-lg);
-            padding: var(--sp-3);
+            padding: var(--sp-2);
             box-shadow: var(--shadow-card);
             border: 1px solid var(--border);
         }
@@ -793,58 +813,49 @@
             }
         }
 
-        /* Certifications */
-        .certs-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: var(--sp-4);
-            align-items: center;
-        }
-        .cert-badge {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: var(--sp-2) var(--sp-3);
-            font-family: var(--f-accent);
-            font-size: var(--fs-sm);
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            color: var(--text);
-            box-shadow: var(--shadow-card);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .cert-badge svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--green);
-            fill: none;
-            stroke-width: 1.8;
-        }
-
-        /* Gallery */
-        .gallery-grid {
+        /* Brands */
+        .brands-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--sp-2);
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--sp-3);
+            margin-top: var(--sp-2);
         }
-        .gallery-grid img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            border-radius: var(--radius-lg);
+        .brand-card {
+            background: var(--surface);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
             box-shadow: var(--shadow-card);
-            transition: transform 0.4s var(--ease);
-            cursor: pointer;
+            border: 1px solid var(--border);
+            transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+            text-align: center;
         }
-        .gallery-grid img:hover {
-            transform: scale(1.03);
+        .brand-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-elevated);
         }
-        @media (max-width: 860px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+        .brand-card img {
+            width: 100%;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+        .brand-card-body {
+            padding: var(--sp-2);
+        }
+        .brand-card-body h3 {
+            font-size: var(--fs-xl);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .brand-card-body p {
+            font-size: var(--fs-md);
+            color: var(--text2);
+            max-width: 40ch;
+            margin: 0 auto;
+        }
+        @media (max-width: 700px) {
+            .brands-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -854,12 +865,12 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: var(--sp-2);
+            gap: var(--sp-1);
         }
         .faq-item {
             background: var(--surface);
             border-radius: var(--radius-lg);
-            padding: var(--sp-2) var(--sp-3);
+            padding: var(--sp-2) var(--sp-2);
             box-shadow: var(--shadow-card);
             border: 1px solid var(--border);
             cursor: pointer;
@@ -900,53 +911,97 @@
             padding-top: 0.6rem;
         }
 
-        /* CTA */
-        .cta-block {
-            text-align: center;
-            padding: var(--sp-5) var(--sp-3);
+        /* CTA Split */
+        .cta-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--sp-3);
+            align-items: stretch;
             background: var(--accent);
             border-radius: var(--radius-xl);
-            color: #fff;
-            margin: 0 var(--sp-3);
-            max-width: var(--maxw);
-            margin-left: auto;
-            margin-right: auto;
+            overflow: hidden;
+            box-shadow: var(--shadow-elevated);
+            margin-top: var(--sp-2);
         }
-        .cta-block h2 {
+        .cta-contact {
+            padding: var(--sp-4) var(--sp-3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            color: #fff;
+        }
+        .cta-contact h2 {
             color: #fff;
             font-size: var(--fs-xxl);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.2rem;
         }
-        .cta-block p {
+        .cta-contact p {
             color: rgba(255, 255, 255, 0.8);
+            font-size: var(--fs-md);
+            margin: 0;
+        }
+        .cta-contact .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.4rem;
+        }
+        .cta-contact .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--f-accent);
             font-size: var(--fs-lg);
-            margin-bottom: var(--sp-3);
-            max-width: 50ch;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .cta-block .btn {
-            background: #fff;
-            color: var(--accent);
             font-weight: 600;
+            color: #fff;
+            transition: opacity 0.3s;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            width: fit-content;
         }
-        .cta-block .btn:hover {
-            background: #f0f0f0;
-            transform: translateY(-2px);
-            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+        .cta-contact .contact-links a:hover {
+            opacity: 0.8;
+        }
+        .cta-contact .contact-links a svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2;
+            flex-shrink: 0;
+        }
+        .cta-map {
+            min-height: 340px;
+            width: 100%;
+            height: 100%;
+        }
+        .cta-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        @media (max-width: 860px) {
+            .cta-split {
+                grid-template-columns: 1fr;
+            }
+            .cta-map {
+                min-height: 280px;
+            }
         }
 
         /* Footer */
         .footer {
             background: #1A1A1A;
             color: rgba(255, 255, 255, 0.65);
-            padding: var(--sp-5) 0 var(--sp-3);
+            padding: 3.2rem 0 2rem;
         }
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: var(--sp-4);
-            margin-bottom: var(--sp-4);
+            gap: var(--sp-3);
+            margin-bottom: var(--sp-3);
         }
         .footer h4 {
             font-family: var(--f-accent);
@@ -954,7 +1009,7 @@
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: #fff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-weight: 600;
         }
         .footer a {
@@ -962,7 +1017,7 @@
             font-size: var(--fs-sm);
             transition: color 0.3s;
             display: block;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
         .footer a:hover {
             color: #fff;
@@ -972,10 +1027,13 @@
             font-size: 1.3rem;
             color: #fff;
             margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: var(--sp-3);
+            padding-top: var(--sp-2);
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -1040,7 +1098,7 @@
             }
             .reveal,
             .hero-copy,
-            .hero-scroll {
+            .hero-scroll-inline {
                 opacity: 1;
                 transform: none;
                 animation: none;
@@ -1051,16 +1109,11 @@
 <body>
     <a class="skip-link" href="#continut">Sari la conținut</a>
 
-    <!-- Sticky Header -->
     <nav class="nav" id="nav">
         <div class="container">
             <a href="index.html" class="brand">
-                <svg viewBox="0 0 32 32" aria-hidden="true">
-                    <rect width="32" height="32" rx="6" fill="none" stroke="#2B4C5E" stroke-width="2"/>
-                    <path d="M8 6h16v20H8z" fill="none" stroke="#2B4C5E" stroke-width="1.8" stroke-linejoin="round"/>
-                    <path d="M12 10h8M12 14h8M12 18h5" stroke="#2B4C5E" stroke-width="1.6" stroke-linecap="round"/>
-                </svg>
-                Papyrus
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232B4C5E'/%3E%3Cpath d='M8 10h16v12H8z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M12 13h8M12 16h8M12 19h5' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E" alt="Duo Cart logo">
+                Duo Cart
             </a>
             <ul class="nav-links">
                 <li><a href="#acasa" class="is-active">Acasă</a></li>
@@ -1077,36 +1130,32 @@
     </nav>
 
     <main id="continut">
-        <!-- 1. HERO -->
         <header class="hero" id="acasa">
             <div class="hero-bg">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1600&h=900&fit=crop&auto=format" alt="Depozit de hârtie industrială">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpPq67YBefpWQT3vVrWr5l0nttzvhp_4wLBfwLaV_2kGoZ7aVMe3KTMZ7n&s=10" alt="Depozit de hârtie industrială">
             </div>
             <div class="hero-overlay"></div>
             <div class="container">
                 <div class="hero-copy">
-                    <span class="eyebrow"><span class="line"></span>Din 2008 · România</span>
-                    <h1 class="hero-title">Producător și distribuitor de <span>produse din hârtie</span> pentru companii din România</h1>
-                    <p class="hero-sub">Furnizăm hârtie industrială, produse igienico-sanitare și soluții personalizate pentru afaceri, instituții și distribuitori.</p>
+                    <h1 class="hero-title">Producător și distribuitor de <span>produse din hârtie</span> </h1>
+                    <p class="hero-sub">Furnizor de hârtie industrială, produse igienico-sanitare și soluții personalizate pentru afaceri, instituții și distribuitori.</p>
                     <div class="hero-actions">
-                        <a href="#oferta" class="btn btn-solid">🟢 Solicită ofertă</a>
-                        <a href="#produse" class="btn btn-outline">⚪ Vezi produsele</a>
+                        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+                        <a href="#produse" class="btn btn-outline">Vezi produsele</a>
+                    </div>
+                    <div class="hero-scroll-inline">
+                        <svg viewBox="0 0 16 22" aria-hidden="true"><path d="M3 3 L8 10 L13 3" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Derulează
                     </div>
                 </div>
             </div>
-            <div class="hero-scroll">
-                <svg viewBox="0 0 16 22" aria-hidden="true"><path d="M3 3 L8 10 L13 3" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Derulează
-            </div>
         </header>
 
-        <!-- 2. DE CE SĂ NE ALEGI -->
         <section class="section" id="avantaje">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="eyebrow"><span class="line"></span>De ce Papyrus</span>
                     <h2>De ce să ne alegi pe noi</h2>
-                    <p>6 motive pentru care companiile din România colaborează cu noi de peste 15 ani.</p>
+                    <p>Motivele pentru care companiile din România colaborează cu noi de peste 25 ani.</p>
                 </div>
                 <div class="advantages-grid reveal">
                     <div class="advantage-card">
@@ -1117,7 +1166,7 @@
                     <div class="advantage-card">
                         <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
                         <h4>Livrare rapidă</h4>
-                        <p>Expediem în 24–48h oriunde în România.</p>
+                        <p>Expediem  oriunde în România.</p>
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><polyline points="2 12 12 2 22 12"/></svg></div>
@@ -1135,7 +1184,10 @@
                         <p>Peste 2000 de clienți activi lunar.</p>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M12 13v6"/><line x1="7" y1="17" x2="17" y2="17"/></svg></div>
+                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  <polyline points="9 12 11 14 15 9" />
+</svg></div>
                         <h4>Calitate garantată</h4>
                         <p>Produse certificate, testate în laborator propriu.</p>
                     </div>
@@ -1143,52 +1195,50 @@
             </div>
         </section>
 
-        <!-- 3. PRODUSE PRINCIPALE -->
         <section class="section section--alt" id="produse">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="eyebrow"><span class="line"></span>Gama de produse</span>
+                    <span class="eyebrow"></span>
                     <h2>Produsele noastre principale</h2>
                     <p>Descoperă categoriile de produse din hârtie pentru business-ul tău.</p>
                 </div>
                 <div class="products-grid reveal">
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1587037542794-6c5a2f4b5a3f?w=500&h=375&fit=crop&auto=format" alt="Hârtie industrială">
+                        <img src="https://s13emagst.akamaized.net/products/124082/124081677/images/res_ebbf8e799d24c1cc9cecbbb601faa9e9.jpg?width=720&height=720&hash=88C9571DAAF2A95ABF8041D87BCC5371" alt="Hârtie industrială">
                         <div class="product-card-body"><h3>Hârtie industrială</h3><p>Rulouri, coli, formate personalizate</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1615800091748-7c3c2c2e4b1e?w=500&h=375&fit=crop&auto=format" alt="Role prosop">
+                        <img src="https://www.e-ambalaj.ro/wp-content/uploads/2024/08/Screenshot-2024-08-02-163419.png?w=500&h=375&fit=crop&auto=format" alt="Role prosop">
                         <div class="product-card-body"><h3>Role prosop</h3><p>1 strat, 2 straturi, gofrate</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1586486855510-8c0e5ebc9c4d?w=500&h=375&fit=crop&auto=format" alt="Hârtie igienică">
+                        <img src="https://r2.mertecom.ro/media/7642/hartie-igienica-economica-jumbo-300gr-2straturi-0.jpg" alt="Hârtie igienică">
                         <div class="product-card-body"><h3>Hârtie igienică</h3><p>Role mici, role industriale</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1597733336794-12d05021d3e6?w=500&h=375&fit=crop&auto=format" alt="Șervețele">
+                        <img src="https://evamar.ro/wp-content/uploads/2023/02/Tura_4-20-1.webp" alt="Șervețele">
                         <div class="product-card-body"><h3>Șervețele</h3><p>1 strat, 2 straturi, pliate</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1604580864964-3c2e2f3b8e1b?w=500&h=375&fit=crop&auto=format" alt="Lavete">
+                        <img src="https://lavetedebumbac.ro/assets/images/jpg/lavete_color_400buc_1024x1024.jpg" alt="Lavete">
                         <div class="product-card-body"><h3>Lavete industriale</h3><p>Celuloză, nețesute, role</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=500&h=375&fit=crop&auto=format" alt="Consumabile">
+                        <img src="https://www.minterfarma.md/sites/default/files/styles/480_480_crop/public/2017-07/consumabile_echipament.jpg?itok=RyqScoG6t" alt="Consumabile">
                         <div class="product-card-body"><h3>Consumabile</h3><p>Dozatoare, săpun, saci menajeri</p><a href="#" class="btn-ghost">Vezi categoria →</a></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. CIFRE -->
         <section class="section section--dark" id="cifre">
             <div class="container">
-                <div class="section-head reveal" style="margin:0 auto 3rem;text-align:center;">
-                    <span class="eyebrow" style="color:rgba(255,255,255,0.55);"><span class="line" style="background:rgba(255,255,255,0.4);"></span>Încredere</span>
+                <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
+                    <span class="eyebrow" style="color:rgba(255,255,255,0.55);"></span>
                     <h2>Cifre care inspiră încredere</h2>
                 </div>
                 <div class="stats-grid reveal">
-                    <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Ani experiență</div></div>
+                    <div class="stat-item"><div class="stat-number">25+</div><div class="stat-label">Ani experiență</div></div>
                     <div class="stat-item"><div class="stat-number">2000+</div><div class="stat-label">Clienți activi</div></div>
                     <div class="stat-item"><div class="stat-number">5000+</div><div class="stat-label">Livrări anual</div></div>
                     <div class="stat-item"><div class="stat-number">99%</div><div class="stat-label">Clienți mulțumiți</div></div>
@@ -1196,29 +1246,27 @@
             </div>
         </section>
 
-        <!-- 5. DESPRE NOI -->
         <section class="section" id="despre">
             <div class="container">
                 <div class="about-grid">
                     <div class="about-copy reveal">
-                        <span class="eyebrow"><span class="line"></span>Despre companie</span>
+                        <span class="eyebrow"></span>
                         <h2 style="font-size:var(--fs-xxl);margin-top:0.5rem;">Suntem producători, nu doar distribuitori</h2>
-                        <p style="margin-top:1.4rem;">Papyrus este o companie românească fondată în 2008, specializată în producția și distribuția de produse din hârtie pentru sectorul B2B. Deținem o fabrică modernă în Cluj-Napoca și un centru logistic care acoperă toată România.</p>
+                        <p style="margin-top:1.4rem;">Duo Cart este o companie românească fondată în 2001, specializată în producția și distribuția de produse din hârtie. Deținem o fabrică modernă în Brașov și un centru logistic care acoperă toată România.</p>
                         <p>Lucrăm cu tipografii, retaileri, distribuitori, instituții publice și companii din HoReCa. Fiecare client primește un consultant dedicat și oferte personalizate în funcție de volum și frecvență.</p>
                         <a href="#despre" class="btn btn-ghost" style="margin-top:0.4rem;">Citește mai multe →</a>
                     </div>
                     <div class="about-visual reveal">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&h=500&fit=crop&auto=format" alt="Fabrica Papyrus">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&h=500&fit=crop&auto=format" alt="Fabrica Duo Cart">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. PROCES -->
         <section class="section section--alt" id="proces">
             <div class="container">
-                <div class="section-head reveal" style="margin:0 auto 3rem;text-align:center;">
-                    <span class="eyebrow"><span class="line"></span>Colaborare</span>
+                <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
+                    <span class="eyebrow"></span>
                     <h2>Procesul de colaborare</h2>
                     <p>Simplu, rapid, transparent. Așa lucrăm cu fiecare client nou.</p>
                 </div>
@@ -1231,92 +1279,37 @@
             </div>
         </section>
 
-        <!-- 7. TESTIMONIALE -->
-        <section class="section" id="testimoniale">
+      
+        <section class="section section--alt" id="branduri">
             <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow"><span class="line"></span>Testimoniale</span>
-                    <h2>Ce spun clienții noștri</h2>
-                    <p>Peste 2000 de companii ne recomandă cu încredere.</p>
+                <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
+                    <span class="eyebrow"><span class="line"></span> Branduri</span>
+                    <h2>Brandurile noastre</h2>
+                    <p>Două linii de produse complementare, dezvoltate pentru nevoi diferite.</p>
                 </div>
-                <div class="testimonials-grid reveal">
-                    <div class="testimonial-card">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Livrare rapidă și produse foarte bune. Colaborăm de 3 ani fără nicio problemă."</p>
-                        <span class="author">SC CleanPro SRL, București</span>
+                <div class="brands-grid reveal">
+                    <div class="brand-card">
+                        <img src="../zippa.jpg" alt="Zippa Brand">
+                        <div class="brand-card-body">
+                            <h3>Zippa</h3>
+                            <p>Gama premium: hârtie igienică fină, șervețele 3 straturi, prosoape pliate – dedicate segmentului HoReCa și office de top.</p>
+                        </div>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Prețuri excelente pentru rolele industriale. Suntem distribuitori și clienții noștri sunt foarte mulțumiți."</p>
-                        <span class="author">SC Papetăria Global SRL, Timișoara</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Am redus costurile cu 15% de când am trecut la Papyrus. Recomand cu încredere."</p>
-                        <span class="author">SC Hotel Transilvania SA, Cluj</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Foarte profesioniști. Ofertele vin rapid, marfa e mereu pe stoc. Partener de încredere."</p>
-                        <span class="author">SC Logistic Expert SRL, Brașov</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Calitate constantă la hârtia igienică industrială. Nu am avut niciodată reclamații."</p>
-                        <span class="author">SC Facility Management SA, Iași</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Cel mai bun furnizor de lavete industriale. Prețul e foarte competitiv."</p>
-                        <span class="author">SC AutoService Pro SRL, Craiova</span>
+                    <div class="brand-card">
+                        <img src="https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?w=600&h=400&fit=crop&auto=format" alt="Brand 2">
+                        <div class="brand-card-body">
+                            <h3>Pufidik</h3>
+                            <p>Linia economică-industrială: role jumbo, lavete celulozice, hârtie kraft – rezistență maximă la preț optim pentru fabrici și depozite.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 8. CERTIFICĂRI -->
-        <section class="section section--alt" id="certificari">
+        <section class="section" id="faq">
             <div class="container">
-                <div class="section-head reveal" style="margin:0 auto 3rem;text-align:center;">
-                    <span class="eyebrow"><span class="line"></span>Calitate</span>
-                    <h2>Certificări</h2>
-                    <p>Produsele noastre respectă cele mai înalte standarde internaționale.</p>
-                </div>
-                <div class="certs-row reveal">
-                    <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>ISO 9001</div>
-                    <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 18H3"/></svg>FSC</div>
-                    <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 7h10M7 12h10M7 17h6"/></svg>PEFC</div>
-                    <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M12 13v6"/><line x1="7" y1="17" x2="17" y2="17"/></svg>HACCP</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 9. GALERIE -->
-        <section class="section" id="galerie">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow"><span class="line"></span>Galerie</span>
-                    <h2>Imagini din fabrică și depozit</h2>
-                    <p>O privire în spatele producției noastre.</p>
-                </div>
-                <div class="gallery-grid reveal">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop&auto=format" alt="Depozit hârtie" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop&auto=format" alt="Fabrica" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1587037542794-6c5a2f4b5a3f?w=400&h=300&fit=crop&auto=format" alt="Utilaje" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&h=300&fit=crop&auto=format" alt="Paleți" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1586486855510-8c0e5ebc9c4d?w=400&h=300&fit=crop&auto=format" alt="Produse" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1615800091748-7c3c2c2e4b1e?w=400&h=300&fit=crop&auto=format" alt="Role hârtie" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1597733336794-12d05021d3e6?w=400&h=300&fit=crop&auto=format" alt="Ambalare" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1604580864964-3c2e2f3b8e1b?w=400&h=300&fit=crop&auto=format" alt="Livrare" loading="lazy">
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. FAQ -->
-        <section class="section section--alt" id="faq">
-            <div class="container">
-                <div class="section-head reveal" style="margin:0 auto 3rem;text-align:center;">
-                    <span class="eyebrow"><span class="line"></span>Întrebări</span>
+                <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
+                    <span class="eyebrow"></span>
                     <h2>Întrebări frecvente</h2>
                 </div>
                 <div class="faq-list reveal">
@@ -1344,30 +1337,46 @@
             </div>
         </section>
 
-        <!-- 11. CTA -->
         <section class="section" id="oferta">
             <div class="container">
-                <div class="cta-block reveal">
-                    <h2>Ai nevoie de produse din hârtie?</h2>
-                    <p>Solicită acum o ofertă personalizată. Îți răspundem în maxim 2 ore.</p>
-                    <a href="#" class="btn">🟢 Cere ofertă</a>
+                <div class="cta-split reveal">
+                    <div class="cta-contact">
+                        <h2>Ai nevoie de produse din hârtie?</h2>
+                        <p>Solicită acum o ofertă personalizată. Îți răspundem în maxim 2 ore.</p>
+                        <div class="contact-links">
+                            <a href="tel:+40745123456">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                +40 745 123 456
+                            </a>
+                            <a href="tel:+40745123457">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                +40 745 123 457
+                            </a>
+                            <a href="mailto:office@duocart.ro">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                office@duocart.ro
+                            </a>
+                            <a href="mailto:comenzi@duocart.ro">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                comenzi@duocart.ro
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cta-map">
+                        <iframe src="https://maps.google.com/maps?q=45.6035627,25.4527085&z=17&t=k&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Locație Duo Cart"></iframe>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 12. FOOTER -->
     <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="brand" style="display:flex;align-items:center;gap:0.5rem;">
-                        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
-                            <rect width="32" height="32" rx="6" fill="none" stroke="#fff" stroke-width="2"/>
-                            <path d="M8 6h16v20H8z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
-                            <path d="M12 10h8M12 14h8M12 18h5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
-                        </svg>
-                        Papyrus
+                    <div class="brand">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232B4C5E'/%3E%3Cpath d='M8 10h16v12H8z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M12 13h8M12 16h8M12 19h5' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E" alt="Duo Cart logo" style="width:28px;height:28px;">
+                        Duo Cart
                     </div>
                     <p style="margin-top:0.8rem;font-size:var(--fs-sm);max-width:28ch;">Producător și distribuitor de produse din hârtie pentru companii din România. Din 2008.</p>
                 </div>
@@ -1376,7 +1385,7 @@
                     <a href="#produse">Produse</a>
                     <a href="#despre">Despre noi</a>
                     <a href="#proces">Proces</a>
-                    <a href="#galerie">Galerie</a>
+                    <a href="#branduri">Branduri</a>
                     <a href="#faq">FAQ</a>
                 </div>
                 <div>
@@ -1388,19 +1397,18 @@
                 <div>
                     <h4>Contact</h4>
                     <p style="font-size:var(--fs-sm);margin-bottom:0.3rem;">📞 <a href="tel:+40745123456">+40 745 123 456</a></p>
-                    <p style="font-size:var(--fs-sm);margin-bottom:0.3rem;">✉️ <a href="mailto:office@papyrus.ro">office@papyrus.ro</a></p>
+                    <p style="font-size:var(--fs-sm);margin-bottom:0.3rem;">✉️ <a href="mailto:office@duocart.ro">office@duocart.ro</a></p>
                     <p style="font-size:var(--fs-sm);margin-bottom:0.3rem;">📍 Str. Fabricii 23, Cluj-Napoca</p>
                     <p style="font-size:var(--fs-sm);">🕗 Luni – Vineri: 08:00 – 17:00</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2026 Papyrus · Cluj-Napoca. Toate drepturile rezervate.</span>
+                <span>© 2026 Duo Cart · Cluj-Napoca. Toate drepturile rezervate.</span>
                 <span>Site realizat cu ♥ pentru industria hârtiei.</span>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
     <a href="https://wa.me/40745123456" class="whatsapp-float" aria-label="Chat pe WhatsApp" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M17.3 15.2c-.3.8-1.2 1.4-2 1.5-1.2.2-2.5-.2-3.7-1-1-.7-1.9-1.6-2.6-2.6-.8-1.2-1.2-2.5-1-3.7.1-.8.7-1.7 1.5-2 .3-.1.6 0 .8.2l1.2 1.7c.2.3.1.7-.1 1-.2.2-.5.5-.6.7-.1.3 0 .7.2 1 .5.8 1.2 1.5 2 2 .5.3.7.3 1 .2.2-.1.5-.4.7-.6.3-.2.7-.3 1-.1l1.7 1.2c.2.2.3.5.1.8z"/><path d="M21.5 12.3c0 5.3-4.3 9.6-9.6 9.6-1.7 0-3.3-.4-4.7-1.2L2 22l1.3-5.2c-.8-1.4-1.2-3-1.2-4.7 0-5.3 4.3-9.6 9.6-9.6 5.3 0 9.6 4.3 9.6 9.6z"/></svg>
     </a>
@@ -1440,7 +1448,6 @@
                 }, { threshold: 0.08 });
                 io.observe(el);
             });
-            // FAQ accordion
             document.querySelectorAll('.faq-item').forEach(function(item) {
                 item.addEventListener('click', function() {
                     var wasOpen = item.classList.contains('open');

@@ -274,11 +274,15 @@ according to applicable laws.
             white-space: nowrap;
         }
         .brand img {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-            border-radius: 6px;
-        }
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9); /* fundal alb 90% */
+    padding: 4px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    transition: width 0.3s, height 0.3s, background 0.3s;
+}
         .nav:not(.is-scrolled) .brand {
             color: #fff;
         }

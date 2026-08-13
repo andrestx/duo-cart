@@ -1509,7 +1509,7 @@ according to applicable laws.
     <span class="designer-container">
         <span class="designer-name">Andrei Stanescu</span>
         <div class="designer-dropdown">
-    <a href="mailto:andreistanescubv@gmail.com?subject=Contact%20site%20Duo%20Cart" class="designer-link">
+    <a href="mailto:andreistanescubv@gmail.com?subject=Oferta%20website" class="designer-link" id="emailLink">
         <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
@@ -1582,9 +1582,33 @@ according to applicable laws.
 // Dropdown designer
 var designerContainer = document.querySelector('.designer-container');
 if (designerContainer) {
+    // Click pe nume -> deschide/închide meniul
     designerContainer.addEventListener('click', function(e) {
-        e.stopPropagation();
-        this.classList.toggle('active');
+        // Dacă click-ul a fost direct pe container sau pe nume
+        if (!e.target.closest('.designer-dropdown')) {
+            this.classList.toggle('active');
+        }
+    });
+
+    // Click pe linkurile din dropdown
+    designerContainer.querySelectorAll('.designer-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            // Oprește propagarea ca să nu declanșeze toggle-ul de mai sus
+            e.stopPropagation();
+
+            // Închide dropdown-ul imediat (fără a interfera cu navigarea)
+            designerContainer.classList.remove('active');
+
+            // Pentru email, forțează deschiderea clientului de mail
+            if (this.href.startsWith('mailto:')) {
+                // Opțional: window.location.href = this.href;
+                // Lăsăm comportamentul default, dar adăugăm siguranță
+                setTimeout(function() {
+                    window.location.href = link.href;
+                }, 50);
+            }
+            // Pentru WhatsApp, target="_blank" va funcționa normal
+        });
     });
 
     // Închide dropdown-ul când se face click în afara lui
@@ -1601,20 +1625,6 @@ if (designerContainer) {
         }
     });
 }
-        // Fallback pentru linkurile din dropdown (în caz de blocare)
-document.querySelectorAll('.designer-dropdown a').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-        // Pentru email, forțează deschiderea clientului de mail
-        if (this.href.startsWith('mailto:')) {
-            // Nu prevenim comportamentul implicit, dar adăugăm o siguranță
-            // (opțional) poți folosi: window.location.href = this.href;
-            // În general, nu este necesar.
-        }
-        // Închide dropdown-ul după click
-        var container = this.closest('.designer-container');
-        if (container) container.classList.remove('active');
-    });
-});
     </script>
 </body>
 </html>

@@ -18,15 +18,38 @@ according to applicable laws.
 <html lang="ro">
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3W2WB5240F"></script>
+<!-- ===== Google Consent Mode v2 + GA4 ===== -->
 <script>
+  // 1. Definim dataLayer și funcția gtag
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
+  // 2. Citim preferința salvată (dacă există)
+  var consentPref = null;
+  try { consentPref = JSON.parse(localStorage.getItem('duocart_consent')); } catch(e) {}
+
+  // 3. Setăm valorile implicite: "denied" pentru toate semnalele
+  //    Dacă utilizatorul a acceptat deja, setăm "granted"
+  gtag('consent', 'default', {
+    'ad_storage':          (consentPref && consentPref.marketing)  ? 'granted' : 'denied',
+    'ad_user_data':        (consentPref && consentPref.marketing)  ? 'granted' : 'denied',
+    'ad_personalization':  (consentPref && consentPref.marketing)  ? 'granted' : 'denied',
+    'analytics_storage':   (consentPref && consentPref.analytics)  ? 'granted' : 'denied',
+    'functionality_storage': 'granted',
+    'security_storage':    'granted',
+    'wait_for_update': 500
+  });
+
+  // 4. Opțional, dar recomandat: păstrează atribuirea fără cookie-uri
+  gtag('set', 'url_passthrough', true);
+  gtag('set', 'ads_data_redaction', true);
+
+  // 5. Încărcăm GA4
+  gtag('js', new Date());
   gtag('config', 'G-3W2WB5240F');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3W2WB5240F"></script>
+<!-- ===== End Google Consent Mode v2 ===== -->
 
     
     <meta charset="UTF-8">
@@ -1216,6 +1239,93 @@ according to applicable laws.
         }
     </style>
 </head>
+
+<!-- ===== Banner Cookies Duo Cart ===== -->
+<style>
+  .cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #1A1A1A; color: rgba(255,255,255,.9);
+    padding: 1.2rem 2rem; z-index: 9999;
+    display: none; align-items: center; gap: 1.2rem;
+    justify-content: space-between; flex-wrap: wrap;
+    box-shadow: 0 -8px 30px rgba(0,0,0,.25);
+    font-family: 'Inter', sans-serif; font-size: .85rem;
+  }
+  .cookie-banner.show { display: flex; }
+  .cookie-banner p { margin: 0; max-width: 60ch; line-height: 1.5; }
+  .cookie-banner a { color: #E9C46A; text-decoration: underline; }
+  .cookie-banner .btn-group { display: flex; gap: .6rem; flex-shrink: 0; }
+  .cookie-banner button {
+    padding: .65rem 1.3rem; border-radius: 40px; border: 1px solid transparent;
+    font-family: 'DM Sans', sans-serif; font-size: .72rem;
+    text-transform: uppercase; letter-spacing: .1em; font-weight: 600;
+    cursor: pointer; transition: all .25s;
+  }
+  .cookie-banner .btn-accept { background: #1A7F4F; color: #fff; }
+  .cookie-banner .btn-accept:hover { background: #1E8F5A; }
+  .cookie-banner .btn-reject { background: transparent; color: rgba(255,255,255,.7); border-color: rgba(255,255,255,.3); }
+  .cookie-banner .btn-reject:hover { color: #fff; border-color: #fff; }
+  @media (max-width: 600px) {
+    .cookie-banner { padding: 1rem; flex-direction: column; align-items: stretch; text-align: center; }
+    .cookie-banner .btn-group { justify-content: center; }
+  }
+</style>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consimțământ cookies">
+  <p>Folosim cookie-uri pentru a analiza traficul (Google Analytics) și a îmbunătăți experiența. Poți accepta sau refuza cookie-urile de analiză.
+    <a href="politica-cookies.html">Politica de cookies</a>.
+  </p>
+  <div class="btn-group">
+    <button class="btn-reject" id="cookieReject">Refuz</button>
+    <button class="btn-accept" id="cookieAccept">Accept</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var banner   = document.getElementById('cookieBanner');
+  var acceptBtn = document.getElementById('cookieAccept');
+  var rejectBtn = document.getElementById('cookieReject');
+  var STORAGE_KEY = 'duocart_consent';
+
+  // Verificăm dacă există deja o preferință salvată
+  var saved = null;
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){}
+
+  if (!saved) {
+    // Nu există preferință -> afișăm bannerul
+    setTimeout(function(){ banner.classList.add('show'); }, 800);
+  } else {
+    // Există preferință -> o aplicăm prin gtag('consent', 'update')
+    applyConsent(saved);
+  }
+
+  function applyConsent(prefs) {
+    gtag('consent', 'update', {
+      'ad_storage':          prefs.marketing  ? 'granted' : 'denied',
+      'ad_user_data':        prefs.marketing  ? 'granted' : 'denied',
+      'ad_personalization':  prefs.marketing  ? 'granted' : 'denied',
+      'analytics_storage':   prefs.analytics  ? 'granted' : 'denied'
+    });
+  }
+
+  function saveConsent(prefs) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+    applyConsent(prefs);
+    banner.classList.remove('show');
+  }
+
+  acceptBtn.addEventListener('click', function(){
+    saveConsent({ analytics: true, marketing: true });
+  });
+
+  rejectBtn.addEventListener('click', function(){
+    saveConsent({ analytics: false, marketing: false });
+  });
+})();
+</script>
+<!-- ===== End Banner Cookies ===== -->
+  
 <body>
     <a class="skip-link" href="#continut">Sari la conținut</a>
 

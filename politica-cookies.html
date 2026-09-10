@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politica de cookies — Duo Cart</title>
+<meta name="description" content="Politica de cookies a site-ului Duo Cart — ce cookie-uri folosim și cum le poți controla.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{
+  --bg:#FCFBF9;--bg2:#F4F2EE;--surface:#FFFFFF;--accent:#2B4C5E;--accent-soft:rgba(43,76,94,.06);
+  --text:#1A1A1A;--text2:#5A5A5A;--text3:#999999;--border:rgba(0,0,0,.06);
+  --f-heading:'Playfair Display',Georgia,serif;--f-body:'Inter',-apple-system,sans-serif;--f-accent:'DM Sans',sans-serif;
+  --fs-xxl:clamp(2rem,4.5vw,3.2rem);--fs-xl:clamp(1.5rem,3vw,2rem);--fs-md:.98rem;--fs-base:.93rem;--fs-sm:.82rem;--fs-xs:.72rem;
+  --maxw:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text2);font-family:var(--f-body);font-size:var(--fs-base);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{margin:0;padding:0;list-style:none}
+h1,h2,h3,h4,p{margin:0}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 2rem}
+h1,h2,h3{font-family:var(--f-heading);font-weight:700;color:var(--text);letter-spacing:-.02em;line-height:1.15}
+
+.nav{background:rgba(252,251,249,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:.9rem 0;position:sticky;top:0;z-index:100}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:.5rem;font-family:var(--f-heading);font-weight:700;font-size:1.35rem;color:var(--text)}
+.brand img{width:42px;height:42px;object-fit:contain;border-radius:8px;background:#fff;padding:3px;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.back-link{font-family:var(--f-accent);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.12em;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:.4rem}
+.back-link:hover{opacity:.75}
+
+.legal-wrap{padding:4rem 0 5rem}
+.legal-hero{max-width:820px;margin:0 auto 2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.legal-hero .eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--f-accent);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.2em;color:var(--accent);font-weight:500;margin-bottom:.8rem}
+.legal-hero .eyebrow .line{width:26px;height:1.2px;background:var(--accent)}
+.legal-hero h1{font-size:var(--fs-xxl)}
+.legal-meta{font-family:var(--f-accent);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-top:.8rem}
+.legal-content{max-width:820px;margin:0 auto}
+.legal-content h2{font-size:var(--fs-xl);margin:2.8rem 0 .9rem}
+.legal-content h3{font-family:var(--f-accent);font-size:1.05rem;font-weight:600;margin:1.6rem 0 .5rem;color:var(--text)}
+.legal-content p,.legal-content li{font-size:var(--fs-md);line-height:1.75;color:var(--text2);margin-bottom:.9rem}
+.legal-content ul{list-style:disc;padding-left:1.4rem;margin-bottom:1rem}
+.legal-content ul li{margin-bottom:.35rem}
+.legal-content a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.legal-content a:hover{opacity:.75}
+.legal-content strong{color:var(--text);font-weight:600}
+.legal-note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1rem 1.2rem;border-radius:8px;margin:1.4rem 0}
+.legal-note p:last-child{margin-bottom:0}
+.legal-note strong{color:var(--accent)}
+.info-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:var(--fs-sm)}
+.info-table th,.info-table td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+.info-table th{background:var(--bg2);font-family:var(--f-accent);font-weight:600;color:var(--text);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.05em;width:35%}
+.cookie-table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:var(--fs-sm)}
+.cookie-table th,.cookie-table td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+.cookie-table th{background:var(--bg2);font-family:var(--f-accent);font-weight:600;color:var(--text);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.05em}
+.cookie-table td code{background:var(--bg2);padding:.15rem .4rem;border-radius:4px;font-size:.82em;color:var(--accent)}
+
+.footer{background:#1A1A1A;color:rgba(255,255,255,.65);padding:2.5rem 0 1.8rem;margin-top:3rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;margin-bottom:1.8rem}
+.footer h4{font-family:var(--f-accent);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.15em;color:#fff;margin-bottom:.7rem;font-weight:600}
+.footer a{color:rgba(255,255,255,.6);font-size:var(--fs-sm);transition:color .3s;display:block;margin-bottom:.3rem}
+.footer a:hover{color:#fff}
+.footer .brand{font-family:var(--f-heading);font-size:1.25rem;color:#fff;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.footer .brand img{width:38px;height:38px;object-fit:contain;border-radius:6px;background:#fff;padding:2px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;font-size:var(--fs-xs)}
+@media(max-width:860px){.container{padding:0 1.2rem}.footer-grid{grid-template-columns:1fr 1fr}.legal-wrap{padding:2.5rem 0 3.5rem}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}.cookie-table{font-size:.75rem}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="brand"><img src="../logo.png" alt="Duo Cart">Duo Cart</a>
+    <a href="index.html" class="back-link">← Înapoi la site</a>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+  <div class="container">
+    <header class="legal-hero">
+      <span class="eyebrow"><span class="line"></span>Legal</span>
+      <h1>Politica de cookies</h1>
+      <div class="legal-meta">Versiune în vigoare din: 10 septembrie 2026</div>
+    </header>
+
+    <article class="legal-content">
+
+      <div class="legal-note">
+        <p><strong>Rezumat:</strong> Folosim un număr redus de cookie-uri. Cele esențiale fac site-ul să funcționeze, iar cele de analiză (Google Analytics 4) ne ajută să înțelegem cum este folosit site-ul. <strong>Cookie-urile sunt stocate local pe dispozitivul tău, nu pe serverele noastre.</strong> Poți refuza cookie-urile de analiză oricând, direct din banner sau din setările browserului.</p>
+      </div>
+
+      <h2>1. Identificarea operatorului și administratorului</h2>
+      <table class="info-table">
+        <tr><th>Operator de date</th><td><strong>Duo Cart</strong> — Râșnov, județul Brașov · <a href="mailto:duocartbv@gmail.com">duocartbv@gmail.com</a></td></tr>
+        <tr><th>Administrator tehnic site</th><td><strong>Andrei Stanescu</strong> (persoană fizică) · <a href="mailto:andreistanescubv@gmail.com">andreistanescubv@gmail.com</a></td></tr>
+        <tr><th>Termen de răspuns</th><td>Maximum <strong>30 de zile</strong> pentru solicitări privind website-ul</td></tr>
+      </table>
+
+      <h2>2. Ce sunt cookie-urile</h2>
+      <p>Cookie-urile sunt fișiere text de mici dimensiuni stocate pe dispozitivul tău (calculator, telefon, tabletă) atunci când vizitezi un site. Ele permit site-ului să rețină informații despre vizita ta — de exemplu, limba preferată sau dacă ai mai vizitat site-ul.</p>
+
+      <h2>3. Ce tipuri de cookie-uri folosim</h2>
+
+      <h3>3.1. Cookie-uri strict necesare</h3>
+      <p>Aceste cookie-uri sunt indispensabile pentru funcționarea corectă a site-ului și nu pot fi dezactivate din sistemele noastre. Nu stochează date personale identificabile.</p>
+
+      <h3>3.2. Cookie-uri de analiză (Google Analytics 4)</h3>
+      <p>Folosim <strong>Google Analytics 4</strong> (ID măsurare: <code>G-3W2WB5240F</code>) pentru a înțelege cum este utilizat site-ul: ce pagini sunt vizitate, cât timp petrec utilizatorii, de unde vine traficul. Datele sunt <strong>agregate și anonimizate</strong> — nu te identifică personal.</p>
+
+      <h3>3.3. Google Search Console</h3>
+      <p>Site-ul este înregistrat în <strong>Google Search Console</strong> pentru monitorizarea prezenței în rezultatele căutării. Această integrare <strong>nu plasează cookie-uri</strong> pe dispozitivul vizitatorilor — este o verificare server-side realizată de Google.</p>
+
+      <h3>3.4. Consent Mode v2</h3>
+      <p>Folosim <strong>Google Consent Mode v2</strong> pentru a transmite către Google alegerea ta privind cookie-urile. Acest mecanism nu stochează date personale, ci doar semnale de tip „granted" / „denied" pentru patru categorii: <code>analytics_storage</code>, <code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>.</p>
+
+      <h2>4. Lista cookie-urilor folosite</h2>
+      <table class="cookie-table">
+        <thead>
+          <tr><th>Nume</th><th>Furnizor</th><th>Scop</th><th>Durată</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Distinge utilizatorii unici</td><td>2 ani</td></tr>
+          <tr><td><code>_ga_3W2WB5240F</code></td><td>Google Analytics 4</td><td>Menține starea sesiunii</td><td>2 ani</td></tr>
+          <tr><td><code>_gid</code></td><td>Google Analytics</td><td>Distinge utilizatorii (24h)</td><td>24 ore</td></tr>
+          <tr><td><code>duocart_consent</code></td><td>Duo Cart</td><td>Reține preferința ta privind cookie-urile (stocat în <code>localStorage</code>, nu cookie)</td><td>Permanent până la ștergere</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:var(--fs-sm);color:var(--text3);font-style:italic;">Lista poate fi actualizată periodic, în funcție de serviciile active la un moment dat.</p>
+
+      <h2>5. Modul de stocare</h2>
+      <div class="legal-note">
+        <p><strong>Cookie-urile sunt stocate exclusiv pe dispozitivul tău</strong> (browser/localStorage). Nu le salvăm pe serverele noastre, nu le transmitem altor terți în afara Google Analytics (care le procesează conform politicii proprii) și nu le folosim pentru profilare comercială.</p>
+      </div>
+
+      <h2>6. Cookie-uri de la terți</h2>
+      <p>Unele cookie-uri pot fi plasate de terți atunci când interacționezi cu anumite elemente ale site-ului:</p>
+      <ul>
+        <li><strong>Google</strong> — pentru Google Analytics și Google Maps;</li>
+        <li><strong>WhatsApp / Meta</strong> — dacă apeși butonul flotant WhatsApp;</li>
+        <li><strong>Cloudflare</strong> — pentru securizarea site-ului (cookie-uri strict funcționale, nu de urmărire).</li>
+      </ul>
+      <p>Politicile acestor terți sunt disponibile pe site-urile lor oficiale.</p>
+
+      <h2>7. Cum poți controla cookie-urile</h2>
+      <p>Ai mai multe opțiuni:</p>
+      <ul>
+        <li><strong>Din bannerul de pe site</strong> — poți alege Accept sau Refuz la prima vizită. Poți redeschide bannerul oricând prin link-ul „Setări cookies" din footer;</li>
+        <li><strong>Din setările browserului</strong> — poți bloca sau șterge cookie-urile oricând:
+          <ul>
+            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/ro/kb/cookies-informatii-care-site-urile-salveaza" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+            <li><a href="https://support.apple.com/ro-ro/HT201265" target="_blank" rel="noopener">Safari</a></li>
+            <li><a href="https://support.microsoft.com/ro-ro/microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+          </ul>
+        </li>
+        <li><strong>Dezactivarea Google Analytics:</strong> poți instala <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>;</li>
+        <li><strong>Mod privat / incognito:</strong> cookie-urile se șterg automat la închiderea ferestrei.</li>
+      </ul>
+      <p>Reține: blocarea cookie-urilor strict necesare poate afecta funcționarea corectă a site-ului.</p>
+
+      <h2>8. Consimțământ</h2>
+      <p>La prima vizită, cookie-urile de analiză sunt activate doar după exprimarea consimțământului prin banner. Poți retrage consimțământul oricând prin:</p>
+      <ul>
+        <li>Click pe „Setări cookies" în footer;</li>
+        <li>Ștergerea cookie-urilor din browser;</li>
+        <li>Ștergerea intrării <code>duocart_consent</code> din <code>localStorage</code>.</li>
+      </ul>
+
+      <h2>9. Modificări</h2>
+      <p>Această politică poate fi actualizată atunci când apar modificări legislative sau tehnice. Versiunea actuală a intrat în vigoare la data de <strong>10 septembrie 2026</strong>.</p>
+
+      <h2>10. Contact</h2>
+      <p>Pentru întrebări despre cookies:</p>
+      <p>📧 <a href="mailto:duocartbv@gmail.com">duocartbv@gmail.com</a> — Duo Cart (operator)<br>
+      📧 <a href="mailto:andreistanescubv@gmail.com">andreistanescubv@gmail.com</a> — Andrei Stanescu (administrator tehnic site)</p>
+
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><img src="../logo.png" alt="Duo Cart">Duo Cart</div>
+        <p style="font-size:var(--fs-sm);max-width:28ch;">Producător și distribuitor de produse din hârtie pentru companii din România.</p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="politica-gdpr.html">Politica GDPR</a>
+        <a href="termeni-si-conditii.html">Termeni și condiții</a>
+        <a href="politica-cookies.html">Politica de cookies</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:duocartbv@gmail.com">duocartbv@gmail.com</a>
+        <a href="index.html">Înapoi la site</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Duo Cart · Brașov - România. Toate drepturile rezervate.</span>
+      <span>Site administrat de Andrei Stanescu</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

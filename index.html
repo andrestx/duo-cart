@@ -1286,37 +1286,52 @@ according to applicable laws.
 </div>
 
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
+  console.log('[Cookie Banner] Script pornit');
+
   var banner   = document.getElementById('cookieBanner');
   var acceptBtn = document.getElementById('cookieAccept');
   var rejectBtn = document.getElementById('cookieReject');
   var STORAGE_KEY = 'duocart_consent';
 
-  // Verificăm dacă există deja o preferință salvată
+  if (!banner) {
+    console.error('[Cookie Banner] Elementul #cookieBanner NU există în DOM!');
+    return;
+  }
+  console.log('[Cookie Banner] Element găsit:', banner);
+
   var saved = null;
   try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){}
+  console.log('[Cookie Banner] Preferință salvată:', saved);
 
   if (!saved) {
-    // Nu există preferință -> afișăm bannerul
-    setTimeout(function(){ banner.classList.add('show'); }, 800);
+    setTimeout(function(){
+      banner.classList.add('show');
+      console.log('[Cookie Banner] Am adăugat clasa .show');
+    }, 300);
   } else {
-    // Există preferință -> o aplicăm prin gtag('consent', 'update')
     applyConsent(saved);
   }
 
   function applyConsent(prefs) {
+    if (typeof gtag !== 'function') {
+      console.warn('[Cookie Banner] gtag nu e disponibil');
+      return;
+    }
     gtag('consent', 'update', {
-      'ad_storage':          prefs.marketing  ? 'granted' : 'denied',
-      'ad_user_data':        prefs.marketing  ? 'granted' : 'denied',
-      'ad_personalization':  prefs.marketing  ? 'granted' : 'denied',
-      'analytics_storage':   prefs.analytics  ? 'granted' : 'denied'
+      'ad_storage':          prefs.marketing ? 'granted' : 'denied',
+      'ad_user_data':        prefs.marketing ? 'granted' : 'denied',
+      'ad_personalization':  prefs.marketing ? 'granted' : 'denied',
+      'analytics_storage':   prefs.analytics ? 'granted' : 'denied'
     });
+    console.log('[Cookie Banner] Consent aplicat:', prefs);
   }
 
   function saveConsent(prefs) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
     applyConsent(prefs);
     banner.classList.remove('show');
+    console.log('[Cookie Banner] Preferință salvată:', prefs);
   }
 
   acceptBtn.addEventListener('click', function(){
@@ -1326,7 +1341,7 @@ according to applicable laws.
   rejectBtn.addEventListener('click', function(){
     saveConsent({ analytics: false, marketing: false });
   });
-})();
+});
 </script>
 <!-- ===== End Banner Cookies ===== -->
     <nav class="nav" id="nav">

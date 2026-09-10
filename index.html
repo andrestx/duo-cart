@@ -12,1756 +12,988 @@ a violation of the law. Breaching these terms will result in legal action
 according to applicable laws.
 -->
 
-
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duo Cart — Producător și distribuitor de produse din hârtie</title>
+<meta name="description" content="Duo Cart — producător și distribuitor de produse din hârtie pentru companii. Hârtie industrială, role prosop, igienică, șervețele. Ofertă în 2 ore.">
 
 <!-- ===== Google Consent Mode v2 + GA4 ===== -->
-<script>
-  // 1. Definim dataLayer și funcția gtag
+<script data-cfasync="false">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
 
-  // 2. Citim preferința salvată (dacă există)
   var consentPref = null;
   try { consentPref = JSON.parse(localStorage.getItem('duocart_consent')); } catch(e) {}
 
-  // 3. Setăm valorile implicite: "denied" pentru toate semnalele
-  //    Dacă utilizatorul a acceptat deja, setăm "granted"
   gtag('consent', 'default', {
-    'ad_storage':          (consentPref && consentPref.marketing)  ? 'granted' : 'denied',
-    'ad_user_data':        (consentPref && consentPref.marketing)  ? 'granted' : 'denied',
-    'ad_personalization':  (consentPref && consentPref.marketing)  ? 'granted' : 'denied',
-    'analytics_storage':   (consentPref && consentPref.analytics)  ? 'granted' : 'denied',
+    'ad_storage':          (consentPref && consentPref.marketing) ? 'granted' : 'denied',
+    'ad_user_data':        (consentPref && consentPref.marketing) ? 'granted' : 'denied',
+    'ad_personalization':  (consentPref && consentPref.marketing) ? 'granted' : 'denied',
+    'analytics_storage':   (consentPref && consentPref.analytics) ? 'granted' : 'denied',
     'functionality_storage': 'granted',
-    'security_storage':    'granted',
+    'security_storage':      'granted',
     'wait_for_update': 500
   });
 
-  // 4. Opțional, dar recomandat: păstrează atribuirea fără cookie-uri
   gtag('set', 'url_passthrough', true);
   gtag('set', 'ads_data_redaction', true);
 
-  // 5. Încărcăm GA4
   gtag('js', new Date());
   gtag('config', 'G-3W2WB5240F');
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3W2WB5240F"></script>
+<script async data-cfasync="false" src="https://www.googletagmanager.com/gtag/js?id=G-3W2WB5240F"></script>
 <!-- ===== End Google Consent Mode v2 ===== -->
 
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duo Cart</title>
-    <meta name="description" content="Duo Cart — producător și distribuitor de produse din hârtie pentru companii. Hârtie industrială, role prosop, igienică, șervețele. Ofertă în 2 ore.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
 <link rel="manifest" href="site.webmanifest">
-    
-    <style>
-        :root {
-            --bg: #FCFBF9;
-            --bg2: #F4F2EE;
-            --surface: #FFFFFF;
-            --accent: #2B4C5E;
-            --accent-hover: #3A6277;
-            --accent-soft: rgba(43, 76, 94, 0.06);
-            --accent-glow: rgba(43, 76, 94, 0.18);
-            --green: #1A7F4F;
-            --green-soft: rgba(26, 127, 79, 0.08);
-            --text: #1A1A1A;
-            --text2: #5A5A5A;
-            --text3: #999999;
-            --border: rgba(0, 0, 0, 0.06);
-            --border2: rgba(0, 0, 0, 0.12);
-            --f-heading: 'Playfair Display', Georgia, serif;
-            --f-body: 'Inter', -apple-system, sans-serif;
-            --f-accent: 'DM Sans', sans-serif;
-            --fs-hero: clamp(2.8rem, 7vw, 4.8rem);
-            --fs-xxl: clamp(2rem, 4.5vw, 3.2rem);
-            --fs-xl: clamp(1.5rem, 3vw, 2rem);
-            --fs-lg: 1.1rem;
-            --fs-md: 0.98rem;
-            --fs-base: 0.93rem;
-            --fs-sm: 0.8rem;
-            --fs-xs: 0.7rem;
-            --sp-1: 0.5rem;
-            --sp-2: 1rem;
-            --sp-3: 2rem;
-            --sp-4: 3.2rem;
-            --sp-5: 3.2rem;
-            --sp-6: 4.5rem;
-            --radius: 8px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-            --ease: cubic-bezier(0.22, 0.7, 0.24, 1);
-            --maxw: 1240px;
-            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
-            --shadow-elevated: 0 12px 34px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
-        }
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-            width: 100%;
-        }
 
-/* ===== Designer dropdown ===== */
-.designer-container {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+<style>
+:root {
+  --bg: #FCFBF9; --bg2: #F4F2EE; --surface: #FFFFFF;
+  --accent: #2B4C5E; --accent-hover: #3A6277;
+  --accent-soft: rgba(43,76,94,0.06); --accent-glow: rgba(43,76,94,0.18);
+  --green: #1A7F4F; --green-soft: rgba(26,127,79,0.08);
+  --text: #1A1A1A; --text2: #5A5A5A; --text3: #999999;
+  --border: rgba(0,0,0,0.06); --border2: rgba(0,0,0,0.12);
+  --f-heading: 'Playfair Display', Georgia, serif;
+  --f-body: 'Inter', -apple-system, sans-serif;
+  --f-accent: 'DM Sans', sans-serif;
+  --fs-hero: clamp(2.8rem, 7vw, 4.8rem);
+  --fs-xxl: clamp(2rem, 4.5vw, 3.2rem);
+  --fs-xl: clamp(1.5rem, 3vw, 2rem);
+  --fs-lg: 1.1rem; --fs-md: 0.98rem; --fs-base: 0.93rem;
+  --fs-sm: 0.8rem; --fs-xs: 0.7rem;
+  --sp-1: 0.5rem; --sp-2: 1rem; --sp-3: 2rem; --sp-4: 3.2rem;
+  --radius: 8px; --radius-lg: 16px; --radius-xl: 24px;
+  --ease: cubic-bezier(0.22, 0.7, 0.24, 1);
+  --maxw: 1240px;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.02);
+  --shadow-elevated: 0 12px 34px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.03);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text2);
+  font-family: var(--f-body); font-size: var(--fs-base);
+  line-height: 1.6; -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; width: 100%; max-width: 100vw;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, h4, p, figure { margin: 0; }
+button { font: inherit; cursor: pointer; }
+
+.skip-link {
+  position: absolute; left: -999px; top: auto;
+  background: var(--accent); color: #fff;
+  padding: .75rem 1.25rem; z-index: 2000;
+  font-family: var(--f-accent); font-size: var(--fs-xs);
+  text-transform: uppercase; letter-spacing: .08em; border-radius: 4px;
+}
+.skip-link:focus { left: var(--sp-2); top: var(--sp-2); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--sp-3); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  font-family: var(--f-accent); font-size: var(--fs-xs);
+  text-transform: uppercase; letter-spacing: 0.2em;
+  color: var(--accent); font-weight: 500;
+}
+h1, h2, h3 {
+  font-family: var(--f-heading); font-weight: 700;
+  color: var(--text); letter-spacing: -0.02em; line-height: 1.12;
+}
+.section-head { max-width: 580px; margin-bottom: var(--sp-3); }
+.section-head h2 { font-size: var(--fs-xxl); margin-top: 0.4rem; }
+.section-head p {
+  margin-top: 0.9rem; font-size: var(--fs-lg);
+  color: var(--text2); max-width: 48ch;
 }
 
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.85rem 1.8rem; font-family: var(--f-accent);
+  font-size: var(--fs-xs); text-transform: uppercase;
+  letter-spacing: 0.12em; border-radius: 40px;
+  border: 1px solid transparent; transition: all 0.4s var(--ease);
+  font-weight: 500; position: relative; overflow: hidden;
+}
+.btn-solid { background: var(--green); color: #fff; }
+.btn-solid:hover {
+  background: #1E8F5A; transform: translateY(-2px);
+  box-shadow: 0 14px 30px -8px rgba(26,127,79,0.35);
+}
+.btn-outline { border-color: var(--border2); color: var(--text); background: transparent; }
+.btn-outline:hover {
+  border-color: var(--accent); color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -6px var(--accent-soft);
+}
+
+/* Nav */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  padding: 1.1rem 0;
+  transition: padding 0.45s var(--ease), background 0.45s var(--ease), border-color 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.nav.is-scrolled {
+  padding: 0.7rem 0;
+  background: rgba(252,251,249,0.88);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-color: var(--border);
+  box-shadow: 0 2px 18px rgba(0,0,0,0.03);
+}
+.nav .container { display: flex; align-items: center; justify-content: space-between; }
+.brand {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: var(--f-heading); font-weight: 700;
+  font-size: 1.35rem; color: var(--text);
+  letter-spacing: -0.01em; transition: color 0.3s; white-space: nowrap;
+}
+.brand img {
+  width: 44px; height: 44px; object-fit: contain;
+  border-radius: 8px; background: rgba(255,255,255,0.9);
+  padding: 4px; box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  transition: width 0.3s, height 0.3s, background 0.3s;
+}
+.nav:not(.is-scrolled) .brand { color: #fff; }
+.nav:not(.is-scrolled) .nav-links a:not(.btn) { color: rgba(255,255,255,0.8); }
+.nav:not(.is-scrolled) .nav-links a.is-active { color: #fff; }
+.nav:not(.is-scrolled) .nav-toggle span,
+.nav:not(.is-scrolled) .nav-toggle span::before,
+.nav:not(.is-scrolled) .nav-toggle span::after { background: #fff; }
+.nav.is-scrolled .brand { color: var(--text); }
+.nav.is-scrolled .nav-links a:not(.btn) { color: var(--text2); }
+.nav.is-scrolled .nav-links a.is-active { color: var(--text); }
+.nav-links { display: flex; align-items: center; gap: var(--sp-3); }
+.nav-links a:not(.btn) {
+  font-family: var(--f-accent); font-size: var(--fs-xs);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  padding-bottom: 5px; position: relative;
+  transition: color 0.3s; font-weight: 500;
+}
+.nav-links a:not(.btn):hover { color: var(--text); }
+.nav-links a:not(.btn)::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 2px; background: var(--accent);
+  transition: width 0.4s var(--ease); border-radius: 2px;
+}
+.nav-links a:not(.btn):hover::after,
+.nav-links a.is-active::after { width: 100%; }
+.nav-links .btn { margin-left: 0.4rem; }
+.nav-toggle { display: none; background: none; border: 0; padding: 0.4rem; flex-shrink: 0; }
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: ""; display: block; width: 24px; height: 2px;
+  background: var(--text);
+  transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+  position: relative; border-radius: 2px;
+}
+.nav-toggle span::before { position: absolute; top: -8px; }
+.nav-toggle span::after { position: absolute; top: 8px; }
+.nav.is-open .nav-toggle span { background: transparent; }
+.nav.is-open .nav-toggle span::before { transform: translateY(8px) rotate(45deg); background: var(--accent); }
+.nav.is-open .nav-toggle span::after { transform: translateY(-8px) rotate(-45deg); background: var(--accent); }
+
+@media (max-width: 860px) {
+  .container { padding: 0 1.1rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: fixed; top: 0; right: -100%; left: auto;
+    width: min(80vw, 320px); height: 100vh;
+    background: var(--bg); flex-direction: column;
+    align-items: flex-start; justify-content: center;
+    gap: var(--sp-3); padding: 0 var(--sp-4);
+    transition: right 0.5s var(--ease);
+    border-left: 1px solid var(--border);
+    box-shadow: -8px 0 30px rgba(0,0,0,0.04);
+  }
+  .nav.is-open .nav-links { right: 0; }
+  .nav-links a:not(.btn) { font-size: var(--fs-base); color: var(--text2); }
+  .nav-links a.is-active { color: var(--text); }
+  .nav .btn { margin-left: 0; margin-top: 0.5rem; }
+}
+
+/* Hero */
+.hero {
+  min-height: 100svh; display: flex; align-items: center;
+  position: relative; padding: 8rem 0 5rem;
+  background: #1A1A1A; overflow: hidden;
+}
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg img {
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.45; filter: brightness(0.7) saturate(0.6);
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(26,26,26,0.7) 0%, rgba(26,26,26,0.35) 50%, rgba(26,26,26,0.65) 100%);
+  z-index: 1;
+}
+.hero .container {
+  display: grid; grid-template-columns: 1fr;
+  align-items: center; position: relative; z-index: 2; text-align: center;
+}
+.hero-copy {
+  opacity: 0; transform: translateY(30px);
+  animation: fadeUp 1s var(--ease) 0.2s forwards;
+  max-width: 780px; margin: 0 auto;
+}
+.hero-title {
+  font-size: var(--fs-hero); line-height: 1.05; color: #FFFFFF;
+  margin: 0 0 1.2rem; font-weight: 800; letter-spacing: -0.03em;
+}
+.hero-title span { color: #5CAC7A; font-style: italic; }
+.hero-sub {
+  font-size: var(--fs-lg); max-width: 55ch;
+  color: rgba(255,255,255,0.8); line-height: 1.6; margin: 0 auto;
+}
+.hero-actions {
+  display: flex; gap: 1rem; margin-top: var(--sp-3);
+  flex-wrap: wrap; justify-content: center;
+}
+.hero-actions .btn-outline { border-color: rgba(255,255,255,0.35); color: #fff; }
+.hero-actions .btn-outline:hover { border-color: #fff; color: #fff; }
+@keyframes fadeUp { to { opacity: 1; transform: none; } }
+.hero-scroll-inline {
+  margin-top: var(--sp-4); display: flex; flex-direction: column;
+  align-items: center; gap: 0.5rem; font-family: var(--f-accent);
+  font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 1.6s forwards;
+}
+.hero-scroll-inline svg { width: 16px; height: 22px; animation: bounce 2s ease-in-out infinite; }
+@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(2rem, 9vw, 3rem); }
+  .hero-sub { font-size: var(--fs-md); }
+}
+
+/* Sections */
+.section { padding: 4rem 0; position: relative; }
+.section--alt { background: var(--bg2); }
+.section--dark { background: #1A1A1A; color: rgba(255,255,255,0.8); }
+.section--dark h2, .section--dark h3 { color: #fff; }
+.section--dark .section-head p { color: rgba(255,255,255,0.65); }
+@media (max-width: 860px) { .section { padding: 2.8rem 0; } }
+
+/* Advantages */
+.advantages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-2); text-align: center; }
+.advantage-card {
+  padding: var(--sp-2); background: var(--surface);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
+  border: 1px solid var(--border); transition: transform 0.35s var(--ease);
+}
+.advantage-card:hover { transform: translateY(-4px); }
+.advantage-icon { margin-bottom: 0.8rem; display: flex; justify-content: center; }
+.advantage-icon svg {
+  width: 32px; height: 32px; stroke: var(--accent); fill: none;
+  stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+}
+.advantage-card h4 {
+  font-family: var(--f-accent); font-size: var(--fs-sm);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--text); margin-bottom: 0.3rem; font-weight: 600;
+}
+.advantage-card p { font-size: var(--fs-xs); color: var(--text3); }
+@media (max-width: 860px) { .advantages-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .advantages-grid { grid-template-columns: 1fr; } }
+
+/* Products */
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-2); margin-top: var(--sp-2); }
+.product-card {
+  background: var(--surface); border-radius: var(--radius-lg);
+  overflow: hidden; box-shadow: var(--shadow-card);
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  border: 1px solid var(--border);
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-elevated); }
+.product-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.product-card-body { padding: var(--sp-2); text-align: center; }
+.product-card-body h3 { font-size: var(--fs-lg); margin-bottom: 0.3rem; font-weight: 600; }
+.product-card-body p { font-size: var(--fs-sm); color: var(--text3); margin-bottom: 0.8rem; }
+@media (max-width: 860px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .products-grid { grid-template-columns: 1fr; } }
+
+/* Stats */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-2); text-align: center; }
+.stat-item .stat-number {
+  font-family: var(--f-heading); font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 800; color: #5CAC7A; letter-spacing: -0.03em; line-height: 1;
+}
+.stat-item .stat-label {
+  font-family: var(--f-accent); font-size: var(--fs-xs);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.6); margin-top: 0.4rem;
+}
+@media (max-width: 860px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); align-items: center; }
+.about-copy p { font-size: var(--fs-md); color: var(--text2); margin-bottom: 1rem; max-width: 48ch; }
+.about-visual {
+  position: relative; border-radius: var(--radius-xl);
+  overflow: hidden; box-shadow: var(--shadow-elevated); aspect-ratio: 5/4;
+}
+.about-visual img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } .about-visual { order: -1; } }
+
+/* Process */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-2); text-align: center; }
+.process-step {
+  background: var(--surface); border-radius: var(--radius-lg);
+  padding: var(--sp-2); box-shadow: var(--shadow-card);
+  border: 1px solid var(--border); position: relative;
+}
+.process-step .step-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--f-accent); font-weight: 700;
+  font-size: var(--fs-lg); margin-bottom: 0.8rem;
+}
+.process-step h4 {
+  font-family: var(--f-accent); font-size: var(--fs-sm);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--text); margin-bottom: 0.3rem; font-weight: 600;
+}
+.process-step p { font-size: var(--fs-xs); color: var(--text3); }
+@media (max-width: 860px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .process-grid { grid-template-columns: 1fr; } }
+
+/* Brands */
+.brands-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); margin-top: var(--sp-2); }
+.brand-card {
+  background: var(--surface); border-radius: var(--radius-xl);
+  overflow: hidden; box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  text-align: center;
+}
+.brand-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-elevated); }
+.brand-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: #f0f0f0; }
+.brand-card-body { padding: var(--sp-2); }
+.brand-card-body h3 { font-size: var(--fs-xl); font-weight: 700; margin-bottom: 0.5rem; }
+.brand-card-body p { font-size: var(--fs-md); color: var(--text2); max-width: 40ch; margin: 0 auto; }
+@media (max-width: 700px) { .brands-grid { grid-template-columns: 1fr; } }
+
+/* FAQ */
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--sp-1); }
+.faq-item {
+  background: var(--surface); border-radius: var(--radius-lg);
+  padding: var(--sp-2); box-shadow: var(--shadow-card);
+  border: 1px solid var(--border); cursor: pointer; transition: box-shadow 0.3s;
+}
+.faq-item:hover { box-shadow: var(--shadow-elevated); }
+.faq-item h4 {
+  font-family: var(--f-accent); font-size: var(--fs-md);
+  font-weight: 600; color: var(--text);
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.faq-item h4 .plus {
+  font-size: 1.4rem; color: var(--accent);
+  transition: transform 0.3s; flex-shrink: 0;
+}
+.faq-item.open h4 .plus { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.45s var(--ease), padding-top 0.45s;
+  font-size: var(--fs-sm); color: var(--text2); line-height: 1.6;
+}
+.faq-item.open .faq-answer { max-height: 200px; padding-top: 0.6rem; }
+
+/* CTA Split */
+.cta-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3);
+  align-items: stretch; background: var(--accent);
+  border-radius: var(--radius-xl); overflow: hidden;
+  box-shadow: var(--shadow-elevated); margin-top: var(--sp-2);
+}
+.cta-contact {
+  padding: var(--sp-4) var(--sp-3);
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 1rem; color: #fff;
+}
+.cta-contact h2 { color: #fff; font-size: var(--fs-xxl); margin-bottom: 0.2rem; }
+.cta-contact p { color: rgba(255,255,255,0.8); font-size: var(--fs-md); margin: 0; }
+.cta-contact .contact-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.4rem; }
+.cta-contact .contact-links a {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--f-accent); font-size: var(--fs-lg);
+  font-weight: 600; color: #fff; transition: opacity 0.3s;
+  text-decoration: underline; text-underline-offset: 4px; width: fit-content;
+}
+.cta-contact .contact-links a:hover { opacity: 0.8; }
+.cta-contact .contact-links a svg {
+  width: 20px; height: 20px; fill: none; stroke: #fff;
+  stroke-width: 2; flex-shrink: 0;
+}
+.cta-map { min-height: 340px; width: 100%; height: 100%; }
+.cta-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+@media (max-width: 860px) {
+  .cta-split { grid-template-columns: 1fr; }
+  .cta-map { min-height: 280px; }
+}
+
+/* Footer */
+.footer { background: #1A1A1A; color: rgba(255,255,255,0.65); padding: 3.2rem 0 2rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--sp-3); margin-bottom: var(--sp-3); }
+.footer h4 {
+  font-family: var(--f-accent); font-size: var(--fs-xs);
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: #fff; margin-bottom: 0.8rem; font-weight: 600;
+}
+.footer a {
+  color: rgba(255,255,255,0.6); font-size: var(--fs-sm);
+  transition: color 0.3s; display: block; margin-bottom: 0.3rem;
+}
+.footer a:hover { color: #fff; }
+.footer .brand {
+  font-family: var(--f-heading); font-size: 1.3rem; color: #fff;
+  margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;
+}
+.footer .brand img { width: 40px; height: 40px; object-fit: contain; border-radius: 6px; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: var(--sp-2); display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem; font-size: var(--fs-xs);
+}
+@media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
+
+/* Designer dropdown */
+.designer-container { position: relative; display: inline-block; cursor: pointer; }
 .designer-name {
-    color: #E9C46A;                /* galben auriu, vizibil pe fundal întunecat */
-    font-weight: 600;
-    border-bottom: 1px dashed #E9C46A;
-    transition: color 0.3s, border-color 0.3s;
+  color: #E9C46A; font-weight: 600;
+  border-bottom: 1px dashed #E9C46A;
+  transition: color 0.3s, border-color 0.3s;
 }
-
-.designer-name:hover {
-    color: #F4A261;
-    border-color: #F4A261;
-}
-
+.designer-name:hover { color: #F4A261; border-color: #F4A261; }
 .designer-dropdown {
-    position: absolute;
-    bottom: calc(100% + 12px);
-    left: 50%;
-    transform: translateX(-50%) translateY(8px);
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    padding: 0.4rem 0;
-    min-width: 200px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    z-index: 50;
-    text-align: left;
+  position: absolute; bottom: calc(100% + 12px);
+  left: 50%; transform: translateX(-50%) translateY(8px);
+  background: #ffffff; border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  padding: 0.4rem 0; min-width: 200px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 50; text-align: left;
 }
-
 .designer-container.active .designer-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+  opacity: 1; visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
-
 .designer-dropdown a.designer-link {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.7rem 1.2rem;
-    color: #1A1A1A !important;      /* forțează culoare închisă pe fundal alb */
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background 0.2s;
-    white-space: nowrap;
-    margin-bottom: 0;                /* elimină spațierea de la .footer a */
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.7rem 1.2rem; color: #1A1A1A !important;
+  font-size: 0.85rem; font-weight: 500;
+  text-decoration: none; transition: background 0.2s;
+  white-space: nowrap; margin-bottom: 0;
 }
-
-.designer-dropdown a.designer-link:hover {
-    background: #f5f5f5;
-    color: #000000 !important;
-}
-
+.designer-dropdown a.designer-link:hover { background: #f5f5f5; color: #000 !important; }
 .designer-dropdown .dropdown-icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    color: #2B4C5E;                 /* albastru închis pentru iconițe */
+  width: 18px; height: 18px; flex-shrink: 0; color: #2B4C5E;
 }
 
-        
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text2);
-            font-family: var(--f-body);
-            font-size: var(--fs-base);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100vw;
-        }
-        img {
-            max-width: 100%;
-            display: block;
-        }
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        h1,
-        h2,
-        h3,
-        h4,
-        p,
-        figure {
-            margin: 0;
-        }
-        button {
-            font: inherit;
-            cursor: pointer;
-        }
-        .skip-link {
-            position: absolute;
-            left: -999px;
-            top: auto;
-            background: var(--accent);
-            color: #fff;
-            padding: .75rem 1.25rem;
-            z-index: 2000;
-            font-family: var(--f-accent);
-            font-size: var(--fs-xs);
-            text-transform: uppercase;
-            letter-spacing: .08em;
-            border-radius: 4px;
-        }
-        .skip-link:focus {
-            left: var(--sp-2);
-            top: var(--sp-2);
-        }
-        :focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 3px;
-            border-radius: 3px;
-        }
-        .container {
-            max-width: var(--maxw);
-            margin: 0 auto;
-            padding: 0 var(--sp-3);
-        }
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            font-family: var(--f-accent);
-            font-size: var(--fs-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--accent);
-            font-weight: 500;
-        }
-        .eyebrow .line {
-            width: 26px;
-            height: 1.2px;
-            background: var(--accent);
-            border-radius: 1px;
-        }
-        h1,
-        h2,
-        h3 {
-            font-family: var(--f-heading);
-            font-weight: 700;
-            color: var(--text);
-            letter-spacing: -0.02em;
-            line-height: 1.12;
-        }
-        .section-head {
-            max-width: 580px;
-            margin-bottom: var(--sp-3);
-        }
-        .section-head h2 {
-            font-size: var(--fs-xxl);
-            margin-top: 0.4rem;
-        }
-        .section-head p {
-            margin-top: 0.9rem;
-            font-size: var(--fs-lg);
-            color: var(--text2);
-            max-width: 48ch;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.85rem 1.8rem;
-            font-family: var(--f-accent);
-            font-size: var(--fs-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            border-radius: 40px;
-            border: 1px solid transparent;
-            transition: all 0.4s var(--ease);
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-solid {
-            background: var(--green);
-            color: #fff;
-        }
-        .btn-solid:hover {
-            background: #1E8F5A;
-            transform: translateY(-2px);
-            box-shadow: 0 14px 30px -8px rgba(26, 127, 79, 0.35);
-        }
-        .btn-outline {
-            border-color: var(--border2);
-            color: var(--text);
-            background: transparent;
-        }
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 22px -6px var(--accent-soft);
-        }
-        .btn-ghost {
-            padding: 0.5rem 1rem;
-            font-family: var(--f-accent);
-            font-size: var(--fs-xs);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent);
-            border-bottom: 1.5px solid transparent;
-            transition: border-color 0.35s;
-            border-radius: 0;
-        }
-        .btn-ghost:hover {
-            border-bottom-color: var(--accent);
-        }
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+.reveal.in-view { opacity: 1; transform: none; }
 
-        /* Sticky Nav */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 900;
-            padding: 1.1rem 0;
-            transition: padding 0.45s var(--ease), background 0.45s var(--ease), border-color 0.45s var(--ease), box-shadow 0.45s var(--ease);
-            border-bottom: 1px solid transparent;
-        }
-        .nav.is-scrolled {
-            padding: 0.7rem 0;
-            background: rgba(252, 251, 249, 0.88);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-color: var(--border);
-            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.03);
-        }
-        .nav .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--f-heading);
-            font-weight: 700;
-            font-size: 1.35rem;
-            color: var(--text);
-            letter-spacing: -0.01em;
-            transition: color 0.3s;
-            white-space: nowrap;
-        }
-        .brand img {
-    width: 44px;
-    height: 44px;
-    object-fit: contain;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.9); /* fundal alb 90% */
-    padding: 4px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-    transition: width 0.3s, height 0.3s, background 0.3s;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal, .hero-copy, .hero-scroll-inline { opacity: 1; transform: none; animation: none; }
 }
-        .nav:not(.is-scrolled) .brand {
-            color: #fff;
-        }
-        .nav:not(.is-scrolled) .nav-links a:not(.btn) {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .nav:not(.is-scrolled) .nav-links a.is-active {
-            color: #fff;
-        }
-        .nav:not(.is-scrolled) .nav-toggle span,
-        .nav:not(.is-scrolled) .nav-toggle span::before,
-        .nav:not(.is-scrolled) .nav-toggle span::after {
-            background: #fff;
-        }
-        .nav.is-scrolled .brand {
-            color: var(--text);
-        }
-        .nav.is-scrolled .nav-links a:not(.btn) {
-            color: var(--text2);
-        }
-        .nav.is-scrolled .nav-links a.is-active {
-            color: var(--text);
-        }
-        .nav.is-scrolled .nav-toggle span,
-        .nav.is-scrolled .nav-toggle span::before,
-        .nav.is-scrolled .nav-toggle span::after {
-            background: var(--text);
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: var(--sp-3);
-        }
-        .nav-links a:not(.btn) {
-            font-family: var(--f-accent);
-            font-size: var(--fs-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            padding-bottom: 5px;
-            position: relative;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-        .nav-links a:not(.btn):hover {
-            color: var(--text);
-        }
-        .nav-links a:not(.btn)::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.4s var(--ease);
-            border-radius: 2px;
-        }
-        .nav-links a:not(.btn):hover::after,
-        .nav-links a.is-active::after {
-            width: 100%;
-        }
-        .nav-links .btn {
-            margin-left: 0.4rem;
-        }
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: 0;
-            padding: 0.4rem;
-            flex-shrink: 0;
-        }
-        .nav-toggle span,
-        .nav-toggle span::before,
-        .nav-toggle span::after {
-            content: "";
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text);
-            transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
-            position: relative;
-            border-radius: 2px;
-        }
-        .nav-toggle span::before {
-            position: absolute;
-            top: -8px;
-        }
-        .nav-toggle span::after {
-            position: absolute;
-            top: 8px;
-        }
-        .nav.is-open .nav-toggle span {
-            background: transparent;
-        }
-        .nav.is-open .nav-toggle span::before {
-            transform: translateY(8px) rotate(45deg);
-            background: var(--accent);
-        }
-        .nav.is-open .nav-toggle span::after {
-            transform: translateY(-8px) rotate(-45deg);
-            background: var(--accent);
-        }
-        @media (max-width: 860px) {
-            .container {
-                padding: 0 1.1rem;
-            }
-            .nav-toggle {
-                display: block;
-            }
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                left: auto;
-                width: min(80vw, 320px);
-                height: 100vh;
-                background: var(--bg);
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                gap: var(--sp-3);
-                padding: 0 var(--sp-4);
-                transition: right 0.5s var(--ease);
-                border-left: 1px solid var(--border);
-                box-shadow: -8px 0 30px rgba(0, 0, 0, 0.04);
-            }
-            .nav.is-open .nav-links {
-                right: 0;
-            }
-            .nav-links a:not(.btn) {
-                font-size: var(--fs-base);
-                color: var(--text2);
-            }
-            .nav-links a.is-active {
-                color: var(--text);
-            }
-            .nav .btn {
-                margin-left: 0;
-                margin-top: 0.5rem;
-            }
-        }
 
-        /* Hero */
-        .hero {
-            min-height: 100svh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 8rem 0 5rem;
-            background: #1A1A1A;
-            overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.45;
-            filter: brightness(0.7) saturate(0.6);
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(160deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.35) 50%, rgba(26, 26, 26, 0.65) 100%);
-            z-index: 1;
-        }
-        .hero .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-        .hero-copy {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s var(--ease) 0.2s forwards;
-            max-width: 780px;
-            margin: 0 auto;
-        }
-        .hero-title {
-            font-size: var(--fs-hero);
-            line-height: 1.05;
-            color: #FFFFFF;
-            margin: 0 0 1.2rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
-        .hero-title span {
-            color: #5CAC7A;
-            font-style: italic;
-        }
-        .hero-sub {
-            font-size: var(--fs-lg);
-            max-width: 55ch;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin: 0 auto;
-        }
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: var(--sp-3);
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .hero-actions .btn-outline {
-            border-color: rgba(255, 255, 255, 0.35);
-            color: #fff;
-        }
-        .hero-actions .btn-outline:hover {
-            border-color: #fff;
-            color: #fff;
-        }
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
-        .hero-scroll-inline {
-            margin-top: var(--sp-4);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--f-accent);
-            font-size: 0.6rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            animation: fadeUp 0.9s var(--ease) 1.6s forwards;
-        }
-        .hero-scroll-inline svg {
-            width: 16px;
-            height: 22px;
-            animation: bounce 2s ease-in-out infinite;
-        }
-        @keyframes bounce {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(8px);
-            }
-        }
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: clamp(2rem, 9vw, 3rem);
-            }
-            .hero-sub {
-                font-size: var(--fs-md);
-            }
-        }
-
-        /* Sections */
-        .section {
-            padding: 4rem 0;
-            position: relative;
-        }
-        .section--alt {
-            background: var(--bg2);
-        }
-        .section--dark {
-            background: #1A1A1A;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .section--dark h2,
-        .section--dark h3 {
-            color: #fff;
-        }
-        .section--dark .section-head p {
-            color: rgba(255, 255, 255, 0.65);
-        }
-        @media (max-width: 860px) {
-            .section {
-                padding: 2.8rem 0;
-            }
-        }
-
-        /* Advantages */
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--sp-2);
-            text-align: center;
-        }
-        .advantage-card {
-            padding: var(--sp-2) var(--sp-2);
-            background: var(--surface);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--border);
-            transition: transform 0.35s var(--ease);
-        }
-        .advantage-card:hover {
-            transform: translateY(-4px);
-        }
-        .advantage-icon {
-            margin-bottom: 0.8rem;
-            display: flex;
-            justify-content: center;
-        }
-        .advantage-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--accent);
-            fill: none;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .advantage-card h4 {
-            font-family: var(--f-accent);
-            font-size: var(--fs-sm);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text);
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-        .advantage-card p {
-            font-size: var(--fs-xs);
-            color: var(--text3);
-        }
-        @media (max-width: 860px) {
-            .advantages-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 480px) {
-            .advantages-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Products */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--sp-2);
-            margin-top: var(--sp-2);
-        }
-        .product-card {
-            background: var(--surface);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-card);
-            transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
-            border: 1px solid var(--border);
-        }
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-elevated);
-        }
-        .product-card img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-        }
-        .product-card-body {
-            padding: var(--sp-2);
-            text-align: center;
-        }
-        .product-card-body h3 {
-            font-size: var(--fs-lg);
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-        .product-card-body p {
-            font-size: var(--fs-sm);
-            color: var(--text3);
-            margin-bottom: 0.8rem;
-        }
-        @media (max-width: 860px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 480px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Stats */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--sp-2);
-            text-align: center;
-        }
-        .stat-item .stat-number {
-            font-family: var(--f-heading);
-            font-size: clamp(2.6rem, 5vw, 3.6rem);
-            font-weight: 800;
-            color: #5CAC7A;
-            letter-spacing: -0.03em;
-            line-height: 1;
-        }
-        .stat-item .stat-label {
-            font-family: var(--f-accent);
-            font-size: var(--fs-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 0.4rem;
-        }
-        @media (max-width: 860px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--sp-2);
-            }
-        }
-
-        /* About */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--sp-4);
-            align-items: center;
-        }
-        .about-copy p {
-            font-size: var(--fs-md);
-            color: var(--text2);
-            margin-bottom: 1rem;
-            max-width: 48ch;
-        }
-        .about-visual {
-            position: relative;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-elevated);
-            aspect-ratio: 5/4;
-        }
-        .about-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        @media (max-width: 860px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .about-visual {
-                order: -1;
-            }
-        }
-
-        /* Process */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--sp-2);
-            text-align: center;
-            position: relative;
-        }
-        .process-step {
-            background: var(--surface);
-            border-radius: var(--radius-lg);
-            padding: var(--sp-2) var(--sp-2);
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--border);
-            position: relative;
-        }
-        .process-step .step-num {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: #fff;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--f-accent);
-            font-weight: 700;
-            font-size: var(--fs-lg);
-            margin-bottom: 0.8rem;
-        }
-        .process-step h4 {
-            font-family: var(--f-accent);
-            font-size: var(--fs-sm);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text);
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-        .process-step p {
-            font-size: var(--fs-xs);
-            color: var(--text3);
-        }
-        @media (max-width: 860px) {
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 480px) {
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--sp-2);
-        }
-        .testimonial-card {
-            background: var(--surface);
-            border-radius: var(--radius-lg);
-            padding: var(--sp-2);
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--border);
-        }
-        .testimonial-card .stars {
-            color: #F0A500;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            margin-bottom: 0.6rem;
-        }
-        .testimonial-card p {
-            font-size: var(--fs-md);
-            color: var(--text2);
-            font-style: italic;
-            margin-bottom: 0.8rem;
-            line-height: 1.5;
-        }
-        .testimonial-card .author {
-            font-family: var(--f-accent);
-            font-size: var(--fs-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text3);
-            font-weight: 500;
-        }
-        @media (max-width: 860px) {
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 520px) {
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Brands */
-        .brands-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--sp-3);
-            margin-top: var(--sp-2);
-        }
-        .brand-card {
-            background: var(--surface);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--border);
-            transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
-            text-align: center;
-        }
-        .brand-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-elevated);
-        }
-        .brand-card img {
-            width: 100%;
-            aspect-ratio: 16/10;
-            object-fit: cover;
-            background: #f0f0f0;
-        }
-        .brand-card-body {
-            padding: var(--sp-2);
-        }
-        .brand-card-body h3 {
-            font-size: var(--fs-xl);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .brand-card-body p {
-            font-size: var(--fs-md);
-            color: var(--text2);
-            max-width: 40ch;
-            margin: 0 auto;
-        }
-        @media (max-width: 700px) {
-            .brands-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* FAQ */
-        .faq-list {
-            max-width: 760px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: var(--sp-1);
-        }
-        .faq-item {
-            background: var(--surface);
-            border-radius: var(--radius-lg);
-            padding: var(--sp-2) var(--sp-2);
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: box-shadow 0.3s;
-        }
-        .faq-item:hover {
-            box-shadow: var(--shadow-elevated);
-        }
-        .faq-item h4 {
-            font-family: var(--f-accent);
-            font-size: var(--fs-md);
-            font-weight: 600;
-            color: var(--text);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-        .faq-item h4 .plus {
-            font-size: 1.4rem;
-            color: var(--accent);
-            transition: transform 0.3s;
-            flex-shrink: 0;
-        }
-        .faq-item.open h4 .plus {
-            transform: rotate(45deg);
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.45s var(--ease), padding-top 0.45s;
-            font-size: var(--fs-sm);
-            color: var(--text2);
-            line-height: 1.6;
-        }
-        .faq-item.open .faq-answer {
-            max-height: 200px;
-            padding-top: 0.6rem;
-        }
-
-        /* CTA Split */
-        .cta-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--sp-3);
-            align-items: stretch;
-            background: var(--accent);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-elevated);
-            margin-top: var(--sp-2);
-        }
-        .cta-contact {
-            padding: var(--sp-4) var(--sp-3);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 1rem;
-            color: #fff;
-        }
-        .cta-contact h2 {
-            color: #fff;
-            font-size: var(--fs-xxl);
-            margin-bottom: 0.2rem;
-        }
-        .cta-contact p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: var(--fs-md);
-            margin: 0;
-        }
-        .cta-contact .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: 0.4rem;
-        }
-        .cta-contact .contact-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-family: var(--f-accent);
-            font-size: var(--fs-lg);
-            font-weight: 600;
-            color: #fff;
-            transition: opacity 0.3s;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            width: fit-content;
-        }
-        .cta-contact .contact-links a:hover {
-            opacity: 0.8;
-        }
-        .cta-contact .contact-links a svg {
-            width: 20px;
-            height: 20px;
-            fill: none;
-            stroke: #fff;
-            stroke-width: 2;
-            flex-shrink: 0;
-        }
-        .cta-map {
-            min-height: 340px;
-            width: 100%;
-            height: 100%;
-        }
-        .cta-map iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            display: block;
-        }
-        @media (max-width: 860px) {
-            .cta-split {
-                grid-template-columns: 1fr;
-            }
-            .cta-map {
-                min-height: 280px;
-            }
-        }
-
-        /* Footer */
-        .footer {
-            background: #1A1A1A;
-            color: rgba(255, 255, 255, 0.65);
-            padding: 3.2rem 0 2rem;
-        }
-        .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr; /* 3 coloane */
-    gap: var(--sp-3);
-    margin-bottom: var(--sp-3);
+/* ===== Cookie Banner — inline styles in HTML, doar clase minime aici ===== */
+.cookie-banner-btn {
+  padding: 10px 20px; border-radius: 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  cursor: pointer; border: 1px solid transparent;
+  transition: opacity 0.2s;
 }
-        .footer h4 {
-            font-family: var(--f-accent);
-            font-size: var(--fs-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #fff;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-        .footer a {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: var(--fs-sm);
-            transition: color 0.3s;
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-        .footer a:hover {
-            color: #fff;
-        }
-        .footer .brand {
-            font-family: var(--f-heading);
-            font-size: 1.3rem;
-            color: #fff;
-            margin-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: var(--sp-2);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: var(--fs-xs);
-        }
-        @media (max-width: 860px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        @media (max-width: 520px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 800;
-            width: 52px;
-            height: 52px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .whatsapp-float:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 32px rgba(37, 211, 102, 0.45);
-        }
-        .whatsapp-float svg {
-            width: 26px;
-            height: 26px;
-            fill: #fff;
-        }
-
-        /* Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(32px);
-            transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
-        }
-        .reveal.in-view {
-            opacity: 1;
-            transform: none;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.001ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.001ms !important;
-            }
-            .reveal,
-            .hero-copy,
-            .hero-scroll-inline {
-                opacity: 1;
-                transform: none;
-                animation: none;
-            }
-        }
-
-
-  .cookie-banner {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: #1A1A1A; color: rgba(255,255,255,.9);
-    padding: 1.2rem 2rem; z-index: 9999;
-    display: none; align-items: center; gap: 1.2rem;
-    justify-content: space-between; flex-wrap: wrap;
-    box-shadow: 0 -8px 30px rgba(0,0,0,.25);
-    font-family: 'Inter', sans-serif; font-size: .85rem;
-  }
-  .cookie-banner.show { display: flex; }
-  .cookie-banner p { margin: 0; max-width: 60ch; line-height: 1.5; }
-  .cookie-banner a { color: #E9C46A; text-decoration: underline; }
-  .cookie-banner .btn-group { display: flex; gap: .6rem; flex-shrink: 0; }
-  .cookie-banner button {
-    padding: .65rem 1.3rem; border-radius: 40px; border: 1px solid transparent;
-    font-family: 'DM Sans', sans-serif; font-size: .72rem;
-    text-transform: uppercase; letter-spacing: .1em; font-weight: 600;
-    cursor: pointer; transition: all .25s;
-  }
-  .cookie-banner .btn-accept { background: #1A7F4F; color: #fff; }
-  .cookie-banner .btn-accept:hover { background: #1E8F5A; }
-  .cookie-banner .btn-reject { background: transparent; color: rgba(255,255,255,.7); border-color: rgba(255,255,255,.3); }
-  .cookie-banner .btn-reject:hover { color: #fff; border-color: #fff; }
-  @media (max-width: 600px) {
-    .cookie-banner { padding: 1rem; flex-direction: column; align-items: stretch; text-align: center; }
-    .cookie-banner .btn-group { justify-content: center; }
-  }
-
-    </style>
+.cookie-banner-btn:hover { opacity: 0.85; }
+.cookie-banner-accept { background: #1A7F4F; color: #fff; }
+.cookie-banner-reject { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
+</style>
 </head>
 
-
-  
 <body>
-    <a class="skip-link" href="#continut">Sari la conținut</a>
-<!-- ===== Banner Cookies Duo Cart ===== -->
+<a class="skip-link" href="#continut">Sari la conținut</a>
 
-
-<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consimțământ cookies">
-  <p>Folosim cookie-uri pentru a analiza traficul (Google Analytics) și a îmbunătăți experiența. Poți accepta sau refuza cookie-urile de analiză.
-    <a href="politica-cookies.html">Politica de cookies</a>.
+<!-- ===== Banner Cookies Duo Cart (imun la Cloudflare) ===== -->
+<div id="cookieBanner" role="dialog" aria-label="Consimțământ cookies"
+     style="position:fixed;bottom:0;left:0;right:0;background:#1A1A1A;color:#fff;padding:20px;z-index:99999;display:none;align-items:center;gap:15px;justify-content:space-between;flex-wrap:wrap;font-family:Arial,sans-serif;font-size:14px;box-shadow:0 -8px 30px rgba(0,0,0,0.3);">
+  <p style="margin:0;flex:1;min-width:220px;line-height:1.5;">
+    Folosim cookie-uri pentru a analiza traficul (Google Analytics) și a îmbunătăți experiența. Poți accepta sau refuza cookie-urile de analiză.
+    <a href="politica-cookies.html" style="color:#E9C46A;text-decoration:underline;">Politica de cookies</a>.
   </p>
-  <div class="btn-group">
-    <button class="btn-reject" id="cookieReject">Refuz</button>
-    <button class="btn-accept" id="cookieAccept">Accept</button>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="cookieReject" class="cookie-banner-btn cookie-banner-reject">Refuz</button>
+    <button id="cookieAccept" class="cookie-banner-btn cookie-banner-accept">Accept</button>
   </div>
 </div>
+<!-- ===== End Banner Cookies ===== -->
 
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  console.log('[Cookie Banner] Script pornit');
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="../logo.png" alt="Duo Cart logo">
+      Duo Cart
+    </a>
+    <ul class="nav-links">
+      <li><a href="#acasa" class="is-active">Acasă</a></li>
+      <li><a href="#produse">Produse</a></li>
+      <li><a href="#despre">Despre noi</a></li>
+      <li><a href="#proces">Proces</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#oferta" class="btn btn-solid">Solicită ofertă</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Deschide meniul" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+</nav>
 
-  var banner   = document.getElementById('cookieBanner');
+<main id="continut">
+
+<header class="hero" id="acasa">
+  <div class="hero-bg">
+    <img src="../drona3.jfif" alt="Depozit de hârtie industrială">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-copy">
+      <h1 class="hero-title">Producător și distribuitor de <span>produse din hârtie</span></h1>
+      <p class="hero-sub">Furnizor de hârtie industrială, produse igienico-sanitare și soluții personalizate pentru afaceri, instituții și distribuitori.</p>
+      <div class="hero-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+        <a href="#produse" class="btn btn-outline">Vezi produsele</a>
+      </div>
+      <div class="hero-scroll-inline">
+        <svg viewBox="0 0 16 22" aria-hidden="true"><path d="M3 3 L8 10 L13 3" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Derulează
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="avantaje">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>De ce să ne alegi pe noi</h2>
+      <p>Motivele pentru care companiile din România colaborează cu noi de peste 25 ani.</p>
+    </div>
+    <div class="advantages-grid reveal">
+      <div class="advantage-card">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 7h10M7 12h10M7 17h6"/></svg></div>
+        <h4>Producător direct</h4>
+        <p>Fără intermediari. Cumperi direct de la fabrică.</p>
+      </div>
+      <div class="advantage-card">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h4>Livrare rapidă</h4>
+        <p>Expediem oriunde în România.</p>
+      </div>
+      <div class="advantage-card">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><polyline points="2 12 12 2 22 12"/></svg></div>
+        <h4>Prețuri competitive</h4>
+        <p>Cel mai bun raport calitate–preț din piață.</p>
+      </div>
+      <div class="advantage-card">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+        <h4>Stoc permanent</h4>
+        <p>Depozit propriu. Marfa e mereu pe stoc.</p>
+      </div>
+      <div class="advantage-card">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <h4>Parteneriate pe termen lung</h4>
+        <p>Peste 2000 de clienți activi lunar.</p>
+      </div>
+      <div class="advantage-card">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 9"/></svg></div>
+        <h4>Calitate garantată</h4>
+        <p>Produse certificate, testate în laborator propriu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="produse">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Produsele noastre principale</h2>
+      <p>Descoperă categoriile de produse din hârtie pentru business-ul tău.</p>
+    </div>
+    <div class="products-grid reveal">
+      <div class="product-card">
+        <img src="https://www.e-ambalaj.ro/wp-content/uploads/2024/08/Screenshot-2024-08-02-163419.png?w=500&h=375&fit=crop&auto=format" alt="Prosop cel 2 str. Zippa">
+        <div class="product-card-body"><h3>Prosop celuloză 2 straturi | Zippa</h3><p>Super absorbant, celuloză pură</p></div>
+      </div>
+      <div class="product-card">
+        <img src="https://s13emagst.akamaized.net/products/33593/33592371/images/res_e7211efcda3ba1c46d1a6228e11164ab.jpg?width=720&height=720&hash=D7814C0BA5D1D14556130F84D413A43D" alt="Prosop cel 3 str. Pufidik">
+        <div class="product-card-body"><h3>Prosop celuloză 3 straturi | Pufidik</h3><p>3 straturi, densitate crescută</p></div>
+      </div>
+      <div class="product-card">
+        <img src="https://r2.mertecom.ro/media/7642/hartie-igienica-economica-jumbo-300gr-2straturi-0.jpg" alt="Hârtie igienică cel 3 str.">
+        <div class="product-card-body"><h3>Hârtie igienică celuloză 3 straturi</h3><p>Moale, rezistentă, uz casnic</p></div>
+      </div>
+      <div class="product-card">
+        <img src="https://s13emagst.akamaized.net/products/51803/51802408/images/res_10f6c058cd89e4bc5bbea5f7c4218810.jpg?w=500&h=375&fit=crop&auto=format" alt="Hârtie igienică reciclată 2 str.">
+        <div class="product-card-body"><h3>Hârtie igienică reciclată 2 straturi</h3><p>Eco-friendly, rezistență bună</p></div>
+      </div>
+      <div class="product-card">
+        <img src="https://roffice.ro/wp-content/uploads/2025/05/Servetele_vrac_2000buc-2.jpg" alt="Șervețele vrac 25 × 25">
+        <div class="product-card-body"><h3>Șervețele vrac 25 × 25</h3><p>1 strat, pliate, versatile</p></div>
+      </div>
+      <div class="product-card">
+        <img src="https://practiconline.ro/12596-large_default/servetele-albe-vrac-1-strat-2525cm-2000buc.jpg" alt="Șervețele vrac 33 × 33">
+        <div class="product-card-body"><h3>Șervețele vrac 33 × 33</h3><p>Format mare, absorbție bună</p></div>
+      </div>
+      <div class="product-card">
+        <img src="https://serveteledehartie.ro/2388-large_default/servetele-faciale-tss.jpg?w=500&h=375&fit=crop&auto=format" alt="Șervețele faciale">
+        <div class="product-card-body"><h3>Șervețele faciale</h3><p>Ambalaj practic, uz personal</p></div>
+      </div>
+      <div class="product-card">
+        <img src="https://dacris.vtexassets.com/arquivos/ids/156285/Servetele-pliate-V-1-strat-verde-250-bucati-set-0.jpg?v=638962124488370000" alt="Șervețele pliate verzi 1 str.">
+        <div class="product-card-body"><h3>Șervețele pliate verzi 1 strat</h3><p>Ecologice, pentru HoReCa</p></div>
+      </div>
+      <div class="product-card">
+        <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=500&h=375&fit=crop&auto=format" alt="Rolă pat medicală 2 str.">
+        <div class="product-card-body"><h3>Rolă pat medicală 2 straturi</h3><p>Igienă, rezistență, uz profesional</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="branduri">
+  <div class="container">
+    <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
+      <h2>Brandurile noastre</h2>
+      <p>Două linii de produse complementare, dezvoltate pentru nevoi diferite.</p>
+    </div>
+    <div class="brands-grid reveal">
+      <div class="brand-card">
+        <img src="../zippa.jpg" alt="Zippa Brand">
+        <div class="brand-card-body">
+          <h3>Zippa</h3>
+          <p>Prosop de hârtie super absorbant, fabricat din celuloză pură de calitate superioară. Datorită structurii rezistente în 2 straturi, este ideal pentru curățarea rapidă a lichidelor și menținerea igienei în bucătărie și în întreaga casă.</p>
+        </div>
+      </div>
+      <div class="brand-card">
+        <img src="../pufidik.jpg" alt="Pufidik Brand">
+        <div class="brand-card-body">
+          <h3>Pufidik</h3>
+          <p>Rolă de prosop realizată din celuloză pură 100%. Cu o structură rezistentă în 3 straturi și o densitate crescută, este o soluție extrem de absorbantă, practică și economică pentru uz casnic sau profesional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark" id="cifre">
+  <div class="container">
+    <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
+      <h2>Cifre care inspiră încredere</h2>
+    </div>
+    <div class="stats-grid reveal">
+      <div class="stat-item"><div class="stat-number">25+</div><div class="stat-label">Ani experiență</div></div>
+      <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Clienți activi</div></div>
+      <div class="stat-item"><div class="stat-number">1500+</div><div class="stat-label">Livrări anual</div></div>
+      <div class="stat-item"><div class="stat-number">95%</div><div class="stat-label">Clienți mulțumiți</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="despre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <h2 style="font-size:var(--fs-xxl);margin-top:0.5rem;">Suntem producători, nu doar distribuitori</h2>
+        <p style="margin-top:1.4rem;">Duo Cart este o companie românească fondată în 2001, specializată în producția și distribuția de produse din hârtie. Deținem o fabrică modernă în Râșnov - Brașov și un centru logistic care deservește toată România.</p>
+        <p>Lucrăm cu retaileri, distribuitori, companii din sectorul HoReCa și instituții publice, oferind soluții adaptate nevoilor fiecărui partener. Fiecare client beneficiază de oferte personalizate, în funcție de volumul și frecvența comenzilor.</p>
+        <p>Punem accent pe seriozitate, promptitudine și calitate, construind relații comerciale bazate pe încredere și colaborare pe termen lung.</p>
+      </div>
+      <div class="about-visual reveal">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&h=500&fit=crop&auto=format" alt="Fabrica Duo Cart">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="proces">
+  <div class="container">
+    <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
+      <h2>Procesul de colaborare</h2>
+      <p>Simplu, rapid, transparent. Așa lucrăm cu fiecare client nou.</p>
+    </div>
+    <div class="process-grid reveal">
+      <div class="process-step"><div class="step-num">1</div><h4>Ne contactezi</h4><p>Ne suni direct.</p></div>
+      <div class="process-step"><div class="step-num">2</div><h4>Primești oferta</h4><p>Îți trimitem oferta personalizată pe email.</p></div>
+      <div class="process-step"><div class="step-num">3</div><h4>Confirmi comanda</h4><p>Stabilești cantitatea și data livrării.</p></div>
+      <div class="process-step"><div class="step-num">4</div><h4>Livrăm rapid</h4><p>Expediem prin flota proprie și parteneri de curierat.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
+      <h2>Întrebări frecvente</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <h4>Livrați în toată România? <span class="plus">+</span></h4>
+        <div class="faq-answer"><p>Da, livrăm în toate județele României prin flotă proprie și parteneri de curierat. Termenul standard este de cinci zile lucrătoare.</p></div>
+      </div>
+      <div class="faq-item">
+        <h4>Care este cantitatea minimă de comandă? <span class="plus">+</span></h4>
+        <div class="faq-answer"><p>Cantitatea minimă de comandă variază în funcție de produs.</p></div>
+      </div>
+      <div class="faq-item">
+        <h4>În cât timp livrați? <span class="plus">+</span></h4>
+        <div class="faq-answer"><p>Majoritatea comenzilor sunt livrate în cinci zile lucrătoare, de la confirmare. Pentru comenzi mai mari sau personalizate, termenul se stabilește de comun acord.</p></div>
+      </div>
+      <div class="faq-item">
+        <h4>Oferiți prețuri pentru distribuitori? <span class="plus">+</span></h4>
+        <div class="faq-answer"><p>Da, avem o grilă specială de prețuri pentru distribuitori și parteneri pe termen lung. Contactați-ne pentru o ofertă personalizată.</p></div>
+      </div>
+      <div class="faq-item">
+        <h4>Faceți produse personalizate? <span class="plus">+</span></h4>
+        <div class="faq-answer"><p>Da, putem personaliza dimensiuni, gramaje, ambalaje și chiar branding-ul. Discutăm cerințele tale și îți facem o ofertă.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="oferta">
+  <div class="container">
+    <div class="cta-split reveal">
+      <div class="cta-contact">
+        <h2>Ai nevoie de produse din hârtie?</h2>
+        <p>Solicită acum o ofertă personalizată. Îți răspundem în cel mai scurt timp posibil.</p>
+        <div class="contact-links">
+          <a href="mailto:duocartbv@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            duocartbv@gmail.com
+          </a>
+          <a href="tel:+40726301902">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +40 726 301 902
+          </a>
+        </div>
+      </div>
+      <div class="cta-map">
+        <iframe src="https://maps.google.com/maps?q=45.6035627,25.4527085&z=17&t=k&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Locație Duo Cart"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">
+          <img src="../logo.png" alt="Duo Cart">
+          Duo Cart
+        </div>
+        <p style="margin-top:0.8rem;font-size:var(--fs-sm);max-width:28ch;">Producător și distribuitor de produse din hârtie pentru companii din România</p>
+      </div>
+      <div>
+        <h4>Link-uri rapide</h4>
+        <a href="#produse">Produse</a>
+        <a href="#despre">Despre noi</a>
+        <a href="#proces">Proces</a>
+        <a href="#branduri">Branduri</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="politica-gdpr.html">Politica GDPR</a>
+        <a href="termeni-si-conditii.html">Termeni și condiții</a>
+        <a href="politica-cookies.html">Politica de cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Duo Cart · Brașov - România. Toate drepturile rezervate.</span>
+      <span>
+        Site realizat cu ♥ de
+        <span class="designer-container">
+          <span class="designer-name">Andrei Stanescu</span>
+          <div class="designer-dropdown">
+            <a href="mailto:andreistanescubv@gmail.com?subject=Oferta%20website" class="designer-link">
+              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Trimite email
+            </a>
+            <a href="https://wa.me/40770723197" target="_blank" rel="noopener" class="designer-link">
+              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.3 15.2c-.3.8-1.2 1.4-2 1.5-1.2.2-2.5-.2-3.7-1-1-.7-1.9-1.6-2.6-2.6-.8-1.2-1.2-2.5-1-3.7.1-.8.7-1.7 1.5-2 .3-.1.6 0 .8.2l1.2 1.7c.2.3.1.7-.1 1-.2.2-.5.5-.6.7-.1.3 0 .7.2 1 .5.8 1.2 1.5 2 2 .5.3.7.3 1 .2.2-.1.5-.4.7-.6.3-.2.7-.3 1-.1l1.7 1.2c.2.2.3.5.1.8z"></path>
+                <path d="M21.5 12.3c0 5.3-4.3 9.6-9.6 9.6-1.7 0-3.3-.4-4.7-1.2L2 22l1.3-5.2c-.8-1.4-1.2-3-1.2-4.7 0-5.3 4.3-9.6 9.6-9.6 5.3 0 9.6 4.3 9.6 9.6z"></path>
+              </svg>
+              Scrie pe WhatsApp
+            </a>
+          </div>
+        </span>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Banner Cookies Script (imun la Cloudflare) ===== -->
+<script data-cfasync="false">
+window.addEventListener('load', function(){
+  var banner = document.getElementById('cookieBanner');
+  if (!banner) { console.error('[Cookie Banner] Elementul lipseste'); return; }
+
   var acceptBtn = document.getElementById('cookieAccept');
   var rejectBtn = document.getElementById('cookieReject');
   var STORAGE_KEY = 'duocart_consent';
 
-  if (!banner) {
-    console.error('[Cookie Banner] Elementul #cookieBanner NU există în DOM!');
-    return;
-  }
-  console.log('[Cookie Banner] Element găsit:', banner);
-
   var saved = null;
   try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){}
-  console.log('[Cookie Banner] Preferință salvată:', saved);
 
   if (!saved) {
-    setTimeout(function(){
-      banner.classList.add('show');
-      console.log('[Cookie Banner] Am adăugat clasa .show');
-    }, 300);
+    banner.style.display = 'flex';
   } else {
     applyConsent(saved);
   }
 
   function applyConsent(prefs) {
-    if (typeof gtag !== 'function') {
-      console.warn('[Cookie Banner] gtag nu e disponibil');
-      return;
-    }
+    if (typeof gtag !== 'function') return;
     gtag('consent', 'update', {
       'ad_storage':          prefs.marketing ? 'granted' : 'denied',
       'ad_user_data':        prefs.marketing ? 'granted' : 'denied',
       'ad_personalization':  prefs.marketing ? 'granted' : 'denied',
       'analytics_storage':   prefs.analytics ? 'granted' : 'denied'
     });
-    console.log('[Cookie Banner] Consent aplicat:', prefs);
   }
 
   function saveConsent(prefs) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs)); } catch(e){}
     applyConsent(prefs);
-    banner.classList.remove('show');
-    console.log('[Cookie Banner] Preferință salvată:', prefs);
+    banner.style.display = 'none';
   }
 
-  acceptBtn.addEventListener('click', function(){
-    saveConsent({ analytics: true, marketing: true });
-  });
-
-  rejectBtn.addEventListener('click', function(){
-    saveConsent({ analytics: false, marketing: false });
-  });
+  if (acceptBtn) acceptBtn.addEventListener('click', function(){ saveConsent({ analytics: true, marketing: true }); });
+  if (rejectBtn) rejectBtn.addEventListener('click', function(){ saveConsent({ analytics: false, marketing: false }); });
 });
 </script>
-<!-- ===== End Banner Cookies ===== -->
-    <nav class="nav" id="nav">
-        <div class="container">
-            <a href="index.html" class="brand">
-                <img src="../logo.png" alt="Duo Cart logo">
-                Duo Cart
-            </a>
-            <ul class="nav-links">
-                <li><a href="#acasa" class="is-active">Acasă</a></li>
-                <li><a href="#produse">Produse</a></li>
-                <li><a href="#despre">Despre noi</a></li>
-                <li><a href="#proces">Proces</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#oferta" class="btn btn-solid">Solicită ofertă</a></li>
-            </ul>
-            <button class="nav-toggle" aria-label="Deschide meniul" aria-expanded="false">
-                <span></span>
-            </button>
-        </div>
-    </nav>
+<!-- ===== End Banner Cookies Script ===== -->
 
-    <main id="continut">
-        <header class="hero" id="acasa">
-            <div class="hero-bg">
-                <img src="../drona3.jfif" alt="Depozit de hârtie industrială">
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="container">
-                <div class="hero-copy">
-                    <h1 class="hero-title">Producător și distribuitor de <span>produse din hârtie</span> </h1>
-                    <p class="hero-sub">Furnizor de hârtie industrială, produse igienico-sanitare și soluții personalizate pentru afaceri, instituții și distribuitori.</p>
-                    <div class="hero-actions">
-                        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
-                        <a href="#produse" class="btn btn-outline">Vezi produsele</a>
-                    </div>
-                    <div class="hero-scroll-inline">
-                        <svg viewBox="0 0 16 22" aria-hidden="true"><path d="M3 3 L8 10 L13 3" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Derulează
-                    </div>
-                </div>
-            </div>
-        </header>
+<!-- ===== Site Scripts ===== -->
+<script data-cfasync="false">
+(function() {
+  var nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('is-scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
 
-        <section class="section" id="avantaje">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>De ce să ne alegi pe noi</h2>
-                    <p>Motivele pentru care companiile din România colaborează cu noi de peste 25 ani.</p>
-                </div>
-                <div class="advantages-grid reveal">
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 7h10M7 12h10M7 17h6"/></svg></div>
-                        <h4>Producător direct</h4>
-                        <p>Fără intermediari. Cumperi direct de la fabrică.</p>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-                        <h4>Livrare rapidă</h4>
-                        <p>Expediem  oriunde în România.</p>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><polyline points="2 12 12 2 22 12"/></svg></div>
-                        <h4>Prețuri competitive</h4>
-                        <p>Cel mai bun raport calitate–preț din piață.</p>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
-                        <h4>Stoc permanent</h4>
-                        <p>Depozit propriu. Marfa e mereu pe stoc.</p>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
-                        <h4>Parteneriate pe termen lung</h4>
-                        <p>Peste 2000 de clienți activi lunar.</p>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-  <polyline points="9 12 11 14 15 9" />
-</svg></div>
-                        <h4>Calitate garantată</h4>
-                        <p>Produse certificate, testate în laborator propriu.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  var toggle = document.querySelector('.nav-toggle');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('is-open'));
+    });
+  }
 
-        <section class="section section--alt" id="produse">
-    <div class="container">
-        <div class="section-head reveal">
-            <span class="eyebrow"></span>
-            <h2>Produsele noastre principale</h2>
-            <p>Descoperă categoriile de produse din hârtie pentru business-ul tău.</p>
-        </div>
-        <div class="products-grid reveal">
-            <div class="product-card">
-                <img src="https://www.e-ambalaj.ro/wp-content/uploads/2024/08/Screenshot-2024-08-02-163419.png?w=500&h=375&fit=crop&auto=format" alt="Prosop cel 2 str. Zippa">
-                <div class="product-card-body"><h3>Prosop celuloză 2 straturi | Zippa</h3><p>Super absorbant, celuloză pură</p></div>
-            </div>
-            <div class="product-card">
-                <img src="https://s13emagst.akamaized.net/products/33593/33592371/images/res_e7211efcda3ba1c46d1a6228e11164ab.jpg?width=720&height=720&hash=D7814C0BA5D1D14556130F84D413A43D" alt="Prosop cel 3 str. Pufidik">
-                <div class="product-card-body"><h3>Prosop celuloză 3 straturi | Pufidik</h3><p>3 straturi, densitate crescută</p></div>
-            </div>
-            <div class="product-card">
-                <img src="https://r2.mertecom.ro/media/7642/hartie-igienica-economica-jumbo-300gr-2straturi-0.jpg" alt="Hârtie igienică cel 3 str.">
-                <div class="product-card-body"><h3>Hârtie igienică celuloză 3 straturi</h3><p>Moale, rezistentă, uz casnic</p></div>
-            </div>
-            <div class="product-card">
-                <img src="https://s13emagst.akamaized.net/products/51803/51802408/images/res_10f6c058cd89e4bc5bbea5f7c4218810.jpg?w=500&h=375&fit=crop&auto=format" alt="Hârtie igienică reciclată 2 str.">
-                <div class="product-card-body"><h3>Hârtie igienică reciclată 2 straturi</h3><p>Eco-friendly, rezistență bună</p></div>
-            </div>
-            <div class="product-card">
-                <img src="https://roffice.ro/wp-content/uploads/2025/05/Servetele_vrac_2000buc-2.jpg" alt="Șervețele vrac 25 × 25">
-                <div class="product-card-body"><h3>Șervețele vrac 25 × 25</h3><p>1 strat, pliate, versatile</p></div>
-            </div>
-            <div class="product-card">
-                <img src="https://practiconline.ro/12596-large_default/servetele-albe-vrac-1-strat-2525cm-2000buc.jpg" alt="Șervețele vrac 33 × 33">
-                <div class="product-card-body"><h3>Șervețele vrac 33 × 33</h3><p>Format mare, absorbție bună</p></div>
-            </div>
-            <div class="product-card">
-                <img src="https://serveteledehartie.ro/2388-large_default/servetele-faciale-tss.jpg?w=500&h=375&fit=crop&auto=format" alt="Șervețele faciale">
-                <div class="product-card-body"><h3>Șervețele faciale</h3><p>Ambalaj practic, uz personal</p></div>
-            </div>
-            <div class="product-card">
-                <img src="https://dacris.vtexassets.com/arquivos/ids/156285/Servetele-pliate-V-1-strat-verde-250-bucati-set-0.jpg?v=638962124488370000" alt="Șervețele pliate verzi 1 str.">
-                <div class="product-card-body"><h3>Șervețele pliate verzi 1 strat</h3><p>Ecologice, pentru HoReCa</p></div>
-            </div>
-            <div class="product-card">
-                <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=500&h=375&fit=crop&auto=format" alt="Rolă pat medicală 2 str.">
-                <div class="product-card-body"><h3>Rolă pat medicală 2 straturi</h3><p>Igienă, rezistență, uz profesional</p></div>
-            </div>
-        </div>
-    </div>
-</section>
+  document.querySelectorAll('.nav-links a').forEach(function(l) {
+    l.addEventListener('click', function() { if (nav) nav.classList.remove('is-open'); });
+  });
 
-<section class="section section--alt" id="branduri">
-            <div class="container">
-                <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
-                    <h2>Brandurile noastre</h2>
-                    <p>Două linii de produse complementare, dezvoltate pentru nevoi diferite.</p>
-                </div>
-                <div class="brands-grid reveal">
-                    <div class="brand-card">
-                        <img src="../zippa.jpg" alt="Zippa Brand">
-                        <div class="brand-card-body">
-                            <h3>Zippa</h3>
-                            <p>Prosop de hârtie super absorbant, fabricat din celuloză pură de calitate superioară. Datorită structurii rezistente în 2 straturi, este ideal pentru curățarea rapidă a lichidelor și menținerea igienei în bucătărie și în întreaga casă.</p>
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <img src="../pufidik.jpg" alt="Pufidik Brand">
-                        <div class="brand-card-body">
-                            <h3>Pufidik</h3>
-                            <p>Rolă de prosop realizată din celuloză pură 100%. Cu o structură rezistentă în 3 straturi și o densitate crescută, este o soluție extrem de absorbantă, practică și economică pentru uz casnic sau profesional.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  var sections = document.querySelectorAll('section[id], header[id]');
+  var links = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (sections.length && links.length) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(link) { link.classList.remove('is-active'); });
+          var active = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+          if (active) active.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(function(s) { observer.observe(s); });
+  }
 
-        
-        <section class="section section--dark" id="cifre">
-            <div class="container">
-                <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
-                    <span class="eyebrow" style="color:rgba(255,255,255,0.55);"></span>
-                    <h2>Cifre care inspiră încredere</h2>
-                </div>
-                <div class="stats-grid reveal">
-                    <div class="stat-item"><div class="stat-number">25+</div><div class="stat-label">Ani experiență</div></div>
-                    <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Clienți activi</div></div>
-                    <div class="stat-item"><div class="stat-number">1500+</div><div class="stat-label">Livrări anual</div></div>
-                    <div class="stat-item"><div class="stat-number">95%</div><div class="stat-label">Clienți mulțumiți</div></div>
-                </div>
-            </div>
-        </section>
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    var io = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        el.classList.add('in-view');
+        io.unobserve(el);
+      }
+    }, { threshold: 0.08 });
+    io.observe(el);
+  });
 
-        <section class="section" id="despre">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-copy reveal">
-                        <span class="eyebrow"></span>
-                        <h2 style="font-size:var(--fs-xxl);margin-top:0.5rem;">Suntem producători, nu doar distribuitori</h2>
-                        <p style="margin-top:1.4rem;">Duo Cart este o companie românească fondată în 2001, specializată în producția și distribuția de produse din hârtie. Deținem o fabrică modernă în Râșnov - Brașov și un centru logistic care deservește toată România.</p>
-                        <p>Lucrăm cu retaileri, distribuitori, companii din sectorul HoReCa și instituții publice, oferind soluții adaptate nevoilor fiecărui partener. Fiecare client beneficiază de oferte personalizate, în funcție de volumul și frecvența comenzilor.</p>
-                        <p> Punem accent pe seriozitate, promptitudine și calitate, construind relații comerciale bazate pe încredere și colaborare pe termen lung.</p>
-                    </div>
-                    <div class="about-visual reveal">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&h=500&fit=crop&auto=format" alt="Fabrica Duo Cart">
-                    </div>
-                </div>
-            </div>
-        </section>
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+})();
 
-        <section class="section section--alt" id="proces">
-            <div class="container">
-                <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
-                    <span class="eyebrow"></span>
-                    <h2>Procesul de colaborare</h2>
-                    <p>Simplu, rapid, transparent. Așa lucrăm cu fiecare client nou.</p>
-                </div>
-                <div class="process-grid reveal">
-                    <div class="process-step"><div class="step-num">1</div><h4>Ne contactezi</h4><p>Ne suni direct.</p></div>
-                    <div class="process-step"><div class="step-num">2</div><h4>Primești oferta</h4><p>Îți trimitem oferta personalizată pe email.</p></div>
-                    <div class="process-step"><div class="step-num">3</div><h4>Confirmi comanda</h4><p>Stabilești cantitatea și data livrării.</p></div>
-                    <div class="process-step"><div class="step-num">4</div><h4>Livrăm rapid</h4><p>Expediem prin flota proprie și parteneri de curierat.</p></div>
-                </div>
-            </div>
-        </section>
-
-      
-        
-
-        <section class="section" id="faq">
-            <div class="container">
-                <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
-                    <span class="eyebrow"></span>
-                    <h2>Întrebări frecvente</h2>
-                </div>
-                <div class="faq-list reveal">
-                    <div class="faq-item">
-                        <h4>Livrați în toată România? <span class="plus">+</span></h4>
-                        <div class="faq-answer"><p>Da, livrăm în toate județele României prin flotă proprie și parteneri de curierat. Termenul standard este de cinci zile lucrătoare.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <h4>Care este cantitatea minimă de comandă? <span class="plus">+</span></h4>
-                        <div class="faq-answer"><p>Cantitatea minimă de comandă variază în funcție de produs.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <h4>În cât timp livrați? <span class="plus">+</span></h4>
-                        <div class="faq-answer"><p>Majoritatea comenzilor sunt livrate în cinci zile lucrătoare, de la confirmare. Pentru comenzi mai mari sau personalizate, termenul se stabilește de comun acord.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <h4>Oferiți prețuri pentru distribuitori? <span class="plus">+</span></h4>
-                        <div class="faq-answer"><p>Da, avem o grilă specială de prețuri pentru distribuitori și parteneri pe termen lung. Contactați-ne pentru o ofertă personalizată.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <h4>Faceți produse personalizate? <span class="plus">+</span></h4>
-                        <div class="faq-answer"><p>Da, putem personaliza dimensiuni, gramaje, ambalaje și chiar branding-ul. Discutăm cerințele tale și îți facem o ofertă.</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="oferta">
-            <div class="container">
-                <div class="cta-split reveal">
-                    <div class="cta-contact">
-                        <h2>Ai nevoie de produse din hârtie?</h2>
-                        <p>Solicită acum o ofertă personalizată. Îți răspundem în cel mai scurt timp posibil.</p>
-                        <div class="contact-links">
-                            <a href="mailto:duocartbv@gmail.com">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                                duocartbv@gmail.com
-                            </a>
-                            <a href="tel:+40726301902">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                +40 726 301 902
-                            </a>
-                            
-                           
-                        </div>
-                    </div>
-                    <div class="cta-map">
-                        <iframe src="https://maps.google.com/maps?q=45.6035627,25.4527085&z=17&t=k&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Locație Duo Cart"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="brand">
-                        <img src="../logo.png">
-                        Duo Cart
-                    </div>
-                    <p style="margin-top:0.8rem;font-size:var(--fs-sm);max-width:28ch;">Producător și distribuitor de produse din hârtie pentru companii din România</p>
-                </div>
-                <div>
-                    <h4>Link-uri rapide</h4>
-                    <a href="#produse">Produse</a>
-                    <a href="#despre">Despre noi</a>
-                    <a href="#proces">Proces</a>
-                    <a href="#branduri">Branduri</a>
-                    <a href="#faq">FAQ</a>
-                </div>
-                <div>
-                    <h4>Legal</h4>
-                    <a href="#">Politica GDPR</a>
-                    <a href="#">Termeni și condiții</a>
-                    <a href="#">Politica de cookies</a>
-                </div>
-                
-            </div>
-            <div class="footer-bottom">
-                <span>© 2026 Duo Cart · Brașov - România. Toate drepturile rezervate.</span>
-                <span>
-    Site realizat cu ♥ de
-    <span class="designer-container">
-        <span class="designer-name">Andrei Stanescu</span>
-        <div class="designer-dropdown">
-    <a href="mailto:andreistanescubv@gmail.com?subject=Oferta%20website" class="designer-link" id="emailLink">
-        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-        Trimite email
-    </a>
-    <a href="https://wa.me/40770723197" target="_blank" rel="noopener" class="designer-link">
-        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17.3 15.2c-.3.8-1.2 1.4-2 1.5-1.2.2-2.5-.2-3.7-1-1-.7-1.9-1.6-2.6-2.6-.8-1.2-1.2-2.5-1-3.7.1-.8.7-1.7 1.5-2 .3-.1.6 0 .8.2l1.2 1.7c.2.3.1.7-.1 1-.2.2-.5.5-.6.7-.1.3 0 .7.2 1 .5.8 1.2 1.5 2 2 .5.3.7.3 1 .2.2-.1.5-.4.7-.6.3-.2.7-.3 1-.1l1.7 1.2c.2.2.3.5.1.8z"></path>
-            <path d="M21.5 12.3c0 5.3-4.3 9.6-9.6 9.6-1.7 0-3.3-.4-4.7-1.2L2 22l1.3-5.2c-.8-1.4-1.2-3-1.2-4.7 0-5.3 4.3-9.6 9.6-9.6 5.3 0 9.6 4.3 9.6 9.6z"></path>
-        </svg>
-        Scrie pe WhatsApp
-    </a>
-</div>
-    </span>
-</span>
-            </div>
-        </div>
-    </footer>
-
-   
-
-    <script>
-        (function() {
-            var nav = document.querySelector('.nav');
-            window.addEventListener('scroll', function() {
-                nav.classList.toggle('is-scrolled', window.scrollY > 40);
-            }, { passive: true });
-            var toggle = document.querySelector('.nav-toggle');
-            toggle.addEventListener('click', function() {
-                nav.classList.toggle('is-open');
-                toggle.setAttribute('aria-expanded', nav.classList.contains('is-open'));
-            });
-            document.querySelectorAll('.nav-links a').forEach(function(l) {
-                l.addEventListener('click', function() { nav.classList.remove('is-open'); });
-            });
-            var sections = document.querySelectorAll('section[id], header[id]');
-            var links = document.querySelectorAll('.nav-links a[href^="#"]');
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(e) {
-                    if (e.isIntersecting) {
-                        links.forEach(function(link) { link.classList.remove('is-active'); });
-                        var active = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
-                        if (active) active.classList.add('is-active');
-                    }
-                });
-            }, { rootMargin: '-30% 0px -60% 0px' });
-            sections.forEach(function(s) { observer.observe(s); });
-            document.querySelectorAll('.reveal').forEach(function(el) {
-                var io = new IntersectionObserver(function(entries) {
-                    if (entries[0].isIntersecting) {
-                        el.classList.add('in-view');
-                        io.unobserve(el);
-                    }
-                }, { threshold: 0.08 });
-                io.observe(el);
-            });
-            document.querySelectorAll('.faq-item').forEach(function(item) {
-                item.addEventListener('click', function() {
-                    var wasOpen = item.classList.contains('open');
-                    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-                    if (!wasOpen) item.classList.add('open');
-                });
-            });
-        })();
-
-
-// Dropdown designer
+// Designer dropdown
 var designerContainer = document.querySelector('.designer-container');
 if (designerContainer) {
-    // Click pe nume -> deschide/închide meniul
-    designerContainer.addEventListener('click', function(e) {
-        // Dacă click-ul a fost direct pe container sau pe nume
-        if (!e.target.closest('.designer-dropdown')) {
-            this.classList.toggle('active');
-        }
+  designerContainer.addEventListener('click', function(e) {
+    if (!e.target.closest('.designer-dropdown')) {
+      this.classList.toggle('active');
+    }
+  });
+
+  designerContainer.querySelectorAll('.designer-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.stopPropagation();
+      designerContainer.classList.remove('active');
+      if (this.href && this.href.startsWith('mailto:')) {
+        setTimeout(function() {
+          window.location.href = link.href;
+        }, 50);
+      }
     });
+  });
 
-    // Click pe linkurile din dropdown
-    designerContainer.querySelectorAll('.designer-link').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            // Oprește propagarea ca să nu declanșeze toggle-ul de mai sus
-            e.stopPropagation();
+  document.addEventListener('click', function(e) {
+    if (!designerContainer.contains(e.target)) {
+      designerContainer.classList.remove('active');
+    }
+  });
 
-            // Închide dropdown-ul imediat (fără a interfera cu navigarea)
-            designerContainer.classList.remove('active');
-
-            // Pentru email, forțează deschiderea clientului de mail
-            if (this.href.startsWith('mailto:')) {
-                // Opțional: window.location.href = this.href;
-                // Lăsăm comportamentul default, dar adăugăm siguranță
-                setTimeout(function() {
-                    window.location.href = link.href;
-                }, 50);
-            }
-            // Pentru WhatsApp, target="_blank" va funcționa normal
-        });
-    });
-
-    // Închide dropdown-ul când se face click în afara lui
-    document.addEventListener('click', function(e) {
-        if (!designerContainer.contains(e.target)) {
-            designerContainer.classList.remove('active');
-        }
-    });
-
-    // Închide la tasta Escape
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            designerContainer.classList.remove('active');
-        }
-    });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      designerContainer.classList.remove('active');
+    }
+  });
 }
-    </script>
+</script>
 </body>
 </html>

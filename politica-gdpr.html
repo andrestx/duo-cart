@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politica GDPR — Duo Cart</title>
+<meta name="description" content="Politica de confidențialitate și protecția datelor personale (GDPR) — Duo Cart.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{
+  --bg:#FCFBF9;--bg2:#F4F2EE;--surface:#FFFFFF;--accent:#2B4C5E;--accent-soft:rgba(43,76,94,.06);
+  --text:#1A1A1A;--text2:#5A5A5A;--text3:#999999;--border:rgba(0,0,0,.06);
+  --f-heading:'Playfair Display',Georgia,serif;--f-body:'Inter',-apple-system,sans-serif;--f-accent:'DM Sans',sans-serif;
+  --fs-xxl:clamp(2rem,4.5vw,3.2rem);--fs-xl:clamp(1.5rem,3vw,2rem);--fs-md:.98rem;--fs-base:.93rem;--fs-sm:.82rem;--fs-xs:.72rem;
+  --maxw:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text2);font-family:var(--f-body);font-size:var(--fs-base);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{margin:0;padding:0;list-style:none}
+h1,h2,h3,h4,p{margin:0}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 2rem}
+h1,h2,h3{font-family:var(--f-heading);font-weight:700;color:var(--text);letter-spacing:-.02em;line-height:1.15}
+
+.nav{background:rgba(252,251,249,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:.9rem 0;position:sticky;top:0;z-index:100}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:.5rem;font-family:var(--f-heading);font-weight:700;font-size:1.35rem;color:var(--text)}
+.brand img{width:42px;height:42px;object-fit:contain;border-radius:8px;background:#fff;padding:3px;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.back-link{font-family:var(--f-accent);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.12em;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:.4rem}
+.back-link:hover{opacity:.75}
+
+.legal-wrap{padding:4rem 0 5rem}
+.legal-hero{max-width:820px;margin:0 auto 2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.legal-hero .eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--f-accent);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.2em;color:var(--accent);font-weight:500;margin-bottom:.8rem}
+.legal-hero .eyebrow .line{width:26px;height:1.2px;background:var(--accent)}
+.legal-hero h1{font-size:var(--fs-xxl)}
+.legal-meta{font-family:var(--f-accent);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-top:.8rem}
+.legal-content{max-width:820px;margin:0 auto}
+.legal-content h2{font-size:var(--fs-xl);margin:2.8rem 0 .9rem}
+.legal-content h3{font-family:var(--f-accent);font-size:1.05rem;font-weight:600;margin:1.6rem 0 .5rem;color:var(--text)}
+.legal-content p,.legal-content li{font-size:var(--fs-md);line-height:1.75;color:var(--text2);margin-bottom:.9rem}
+.legal-content ul{list-style:disc;padding-left:1.4rem;margin-bottom:1rem}
+.legal-content ul li{margin-bottom:.35rem}
+.legal-content a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.legal-content a:hover{opacity:.75}
+.legal-content strong{color:var(--text);font-weight:600}
+.legal-note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1rem 1.2rem;border-radius:8px;margin:1.4rem 0}
+.legal-note p:last-child{margin-bottom:0}
+.legal-note strong{color:var(--accent)}
+.info-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:var(--fs-sm)}
+.info-table th,.info-table td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+.info-table th{background:var(--bg2);font-family:var(--f-accent);font-weight:600;color:var(--text);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.05em;width:35%}
+
+.footer{background:#1A1A1A;color:rgba(255,255,255,.65);padding:2.5rem 0 1.8rem;margin-top:3rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;margin-bottom:1.8rem}
+.footer h4{font-family:var(--f-accent);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.15em;color:#fff;margin-bottom:.7rem;font-weight:600}
+.footer a{color:rgba(255,255,255,.6);font-size:var(--fs-sm);transition:color .3s;display:block;margin-bottom:.3rem}
+.footer a:hover{color:#fff}
+.footer .brand{font-family:var(--f-heading);font-size:1.25rem;color:#fff;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.footer .brand img{width:38px;height:38px;object-fit:contain;border-radius:6px;background:#fff;padding:2px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;font-size:var(--fs-xs)}
+@media(max-width:860px){.container{padding:0 1.2rem}.footer-grid{grid-template-columns:1fr 1fr}.legal-wrap{padding:2.5rem 0 3.5rem}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="brand"><img src="../logo.png" alt="Duo Cart">Duo Cart</a>
+    <a href="index.html" class="back-link">← Înapoi la site</a>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+  <div class="container">
+    <header class="legal-hero">
+      <span class="eyebrow"><span class="line"></span>Legal</span>
+      <h1>Politica GDPR</h1>
+      <div class="legal-meta">Versiune în vigoare din: 10 septembrie 2026</div>
+    </header>
+
+    <article class="legal-content">
+
+      <div class="legal-note">
+        <p><strong>Rezumat:</strong> Duo Cart respectă Regulamentul (UE) 2016/679 (GDPR). Colectăm un set minim de date, le folosim doar în scopuri clar definite și nu le vindem niciodată. <strong>Datele nu sunt stocate fizic</strong> — sunt păstrate exclusiv electronic, pe servere securizate, pentru perioadele strict necesare.</p>
+      </div>
+
+      <h2>1. Identificarea operatorului și a administratorului site-ului</h2>
+
+      <h3>1.1. Operator de date cu caracter personal</h3>
+      <p>Operatorul datelor colectate prin intermediul site-ului este:</p>
+      <table class="info-table">
+        <tr><th>Denumire</th><td>Duo Cart</td></tr>
+        <tr><th>Sediu / locație</th><td>Râșnov, județul Brașov, România</td></tr>
+        <tr><th>Email</th><td><a href="mailto:duocartbv@gmail.com">duocartbv@gmail.com</a></td></tr>
+      </table>
+
+      <h3>1.2. Administrator tehnic al site-ului</h3>
+      <p>Persoana responsabilă de administrarea tehnică, securitatea și mentenanța site-ului (inclusiv implementarea cookie-urilor, a Google Analytics și a Google Search Console) este:</p>
+      <table class="info-table">
+        <tr><th>Nume</th><td>Andrei Stanescu</td></tr>
+        <tr><th>Rol</th><td>Administrator website (persoană fizică)</td></tr>
+        <tr><th>Email</th><td><a href="mailto:andreistanescubv@gmail.com">andreistanescubv@gmail.com</a></td></tr>
+        <tr><th>Termen de răspuns legal</th><td>Maximum <strong>30 de zile</strong> de la primirea cererii scrise</td></tr>
+      </table>
+
+      <div class="legal-note">
+        <p><strong>Important:</strong> Toate solicitările privind datele personale, drepturile GDPR sau comunicările comerciale se adresează <strong>operatorului Duo Cart</strong> la <a href="mailto:duocartbv@gmail.com">duocartbv@gmail.com</a>. Administratorul tehnic (Andrei Stanescu) poate fi contactat pentru aspecte strict legate de funcționarea website-ului.</p>
+      </div>
+
+      <h2>2. Ce date colectăm</h2>
+
+      <h3>2.1. Date furnizate direct de tine</h3>
+      <p>Când ne contactezi telefonic, prin email sau prin WhatsApp pentru o ofertă, putem colecta:</p>
+      <ul>
+        <li>Nume și prenume</li>
+        <li>Denumirea firmei / instituției</li>
+        <li>Adresa de email</li>
+        <li>Numărul de telefon</li>
+        <li>Conținutul mesajului tău (produse solicitate, cantități etc.)</li>
+      </ul>
+
+      <h3>2.2. Date colectate automat</h3>
+      <p>La vizitarea site-ului, prin intermediul <strong>Google Analytics 4</strong>, putem colecta:</p>
+      <ul>
+        <li>Adresa IP (anonimizată)</li>
+        <li>Tipul de dispozitiv, browser și sistem de operare</li>
+        <li>Pagini vizitate, durata sesiunii, sursa traficului</li>
+        <li>Date agregate privind comportamentul de navigare</li>
+      </ul>
+
+      <h2>3. Modul de stocare a datelor</h2>
+      <div class="legal-note">
+        <p><strong>Datele NU sunt stocate fizic.</strong> Nu există arhive pe hârtie, dosare fizice sau copii tipărite ale datelor colectate prin intermediul acestui site.</p>
+      </div>
+      <p>Toate datele sunt păstrate exclusiv <strong>electronic</strong>, în medii securizate:</p>
+      <ul>
+        <li><strong>Email</strong> — pe serverele furnizorului de email (Google Workspace / Gmail), protejate prin autentificare în doi factori;</li>
+        <li><strong>Google Analytics</strong> — date agregate, anonimizate, stocate pe serverele Google, cu ștergere automată după 26 de luni;</li>
+        <li><strong>Cookie-uri</strong> — stocate local pe dispozitivul utilizatorului, nu pe serverele noastre.</li>
+      </ul>
+      <p>Nu deținem baze de date cu profiluri de clienți, nu folosim sisteme CRM care să rețină date personale și nu efectuăm prelucrări automate (profilare) pe baza datelor colectate online.</p>
+
+      <h2>4. Scopurile și temeiul legal</h2>
+      <ul>
+        <li><strong>Comunicare comercială și ofertare</strong> — temei: executarea contractului sau interes legitim (art. 6(1)(b) și (f) GDPR).</li>
+        <li><strong>Analiza traficului și îmbunătățirea site-ului</strong> — temei: consimțământ (art. 6(1)(a) GDPR), exprimat prin bannerul de cookies.</li>
+        <li><strong>Respectarea obligațiilor legale</strong> (facturare, contabilitate) — temei: obligație legală (art. 6(1)(c) GDPR).</li>
+      </ul>
+
+      <h2>5. Destinatari și transfer de date</h2>
+      <p>Nu vindem și nu închiriem datele tale. Le putem transmite doar către:</p>
+      <ul>
+        <li><strong>Google LLC</strong> (Google Analytics, Google Search Console, Gmail) — pentru analiza traficului și comunicare;</li>
+        <li><strong>Furnizorul de hosting și Cloudflare</strong> — pentru găzduirea și securizarea site-ului;</li>
+        <li><strong>Autorități publice</strong> — doar dacă legea ne obligă.</li>
+      </ul>
+      <p>Google poate transfera date în afara Spațiului Economic European, pe baza clauzelor contractuale standard aprobate de Comisia Europeană.</p>
+
+      <h2>6. Perioada de stocare</h2>
+      <ul>
+        <li><strong>Date de contact comercial (email):</strong> pe durata relației comerciale și ulterior, cât timp impune legislația fiscală (5–10 ani), dar exclusiv în format electronic;</li>
+        <li><strong>Date Analytics:</strong> maximum 26 de luni (perioada standard Google Analytics 4);</li>
+        <li><strong>Cookies:</strong> conform <a href="politica-cookies.html">Politicii de cookies</a>.</li>
+      </ul>
+
+      <h2>7. Drepturile tale</h2>
+      <p>În calitate de persoană vizată, ai următoarele drepturi:</p>
+      <ul>
+        <li>Dreptul de <strong>acces</strong> la datele tale;</li>
+        <li>Dreptul la <strong>rectificare</strong> (corectarea datelor inexacte);</li>
+        <li>Dreptul la <strong>ștergere</strong> („dreptul de a fi uitat");</li>
+        <li>Dreptul la <strong>restricționarea prelucrării</strong>;</li>
+        <li>Dreptul la <strong>portabilitatea datelor</strong>;</li>
+        <li>Dreptul de <strong>opoziție</strong>;</li>
+        <li>Dreptul de a-ți <strong>retrage consimțământul</strong> oricând;</li>
+        <li>Dreptul de a depune <strong>plângere</strong> la ANSPDCP.</li>
+      </ul>
+      <p>Pentru exercitarea acestor drepturi, ne poți contacta la <a href="mailto:duocartbv@gmail.com">duocartbv@gmail.com</a>. Vom răspunde în termen de <strong>maximum 30 de zile</strong> de la primirea cererii.</p>
+
+      <h2>8. Autoritatea de supraveghere</h2>
+      <p>Dacă apreciezi că drepturile tale au fost încălcate, poți depune plângere la:</p>
+      <p><strong>Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP)</strong><br>
+      B-dul G-ral. Gheorghe Magheru 28-30, Sector 1, București<br>
+      Website: <a href="https://www.dataprotection.ro" target="_blank" rel="noopener">www.dataprotection.ro</a></p>
+
+      <h2>9. Securitatea datelor</h2>
+      <p>Folosim măsuri tehnice și organizatorice rezonabile (conexiune HTTPS, Cloudflare, autentificare în doi factori, acces restricționat) pentru a proteja datele împotriva accesului neautorizat, pierderii sau divulgării.</p>
+
+      <h2>10. Intrarea în vigoare</h2>
+      <p>Această politică a intrat în vigoare la data de <strong>10 septembrie 2026</strong>. Orice modificare ulterioară va fi afișată pe această pagină, împreună cu data actualizării.</p>
+
+      <h2>11. Contact</h2>
+      <p>Pentru orice întrebare legată de prelucrarea datelor personale:</p>
+      <p>📧 <a href="mailto:duocartbv@gmail.com">duocartbv@gmail.com</a> — Duo Cart (operator)<br>
+      📧 <a href="mailto:andreistanescubv@gmail.com">andreistanescubv@gmail.com</a> — Andrei Stanescu (administrator tehnic website)<br>
+
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><img src="../logo.png" alt="Duo Cart">Duo Cart</div>
+        <p style="font-size:var(--fs-sm);max-width:28ch;">Producător și distribuitor de produse din hârtie pentru companii din România.</p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="politica-gdpr.html">Politica GDPR</a>
+        <a href="termeni-si-conditii.html">Termeni și condiții</a>
+        <a href="politica-cookies.html">Politica de cookies</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:duocartbv@gmail.com">duocartbv@gmail.com</a>
+        <a href="tel:+40726301902">+40 726 301 902</a>
+        <a href="index.html">Înapoi la site</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Duo Cart · Brașov - România. Toate drepturile rezervate.</span>
+      <span>Site administrat de Andrei Stanescu</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

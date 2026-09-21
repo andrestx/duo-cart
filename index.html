@@ -329,6 +329,106 @@ h1, h2, h3 {
 @media (max-width: 860px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .products-grid { grid-template-columns: 1fr; } }
 
+/* Product Modal */
+.product-card-body .btn-explore {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.55rem 1.1rem; margin-top: 0.2rem;
+  font-family: var(--f-accent); font-size: 0.65rem;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  border-radius: 40px; border: 1px solid var(--border2);
+  background: transparent; color: var(--text);
+  transition: all 0.35s var(--ease); font-weight: 500;
+}
+.product-card-body .btn-explore:hover {
+  border-color: var(--accent); color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -6px var(--accent-soft);
+}
+.product-card-body .btn-explore svg {
+  width: 12px; height: 12px;
+  stroke: currentColor; fill: none; stroke-width: 2;
+  transition: transform 0.35s var(--ease);
+}
+.product-card-body .btn-explore:hover svg { transform: translateX(3px); }
+
+/* Modal */
+.product-modal {
+  position: fixed; inset: 0; z-index: 100000;
+  display: none; align-items: center; justify-content: center;
+  padding: 1.5rem;
+  background: rgba(26,26,26,0.72);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  opacity: 0; transition: opacity 0.35s var(--ease);
+}
+.product-modal.is-open { display: flex; opacity: 1; }
+.product-modal-inner {
+  position: relative; width: min(100%, 880px);
+  max-height: 90vh; overflow-y: auto;
+  background: var(--surface); border-radius: var(--radius-xl);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  display: grid; grid-template-columns: 1fr 1fr;
+  transform: translateY(24px) scale(0.98);
+  transition: transform 0.45s var(--ease);
+}
+.product-modal.is-open .product-modal-inner { transform: none; }
+.product-modal-media { position: relative; min-height: 320px; background: #f0f0f0; }
+.product-modal-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  position: absolute; inset: 0;
+}
+.product-modal-body { padding: 2rem; display: flex; flex-direction: column; }
+.product-modal-body h3 {
+  font-size: var(--fs-xl); margin-bottom: 0.4rem;
+}
+.product-modal-body .modal-tag {
+  font-family: var(--f-accent); font-size: var(--fs-xs);
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--accent); margin-bottom: 0.8rem; display: block;
+}
+.product-modal-body p.modal-desc {
+  font-size: var(--fs-sm); color: var(--text2);
+  margin-bottom: 1.2rem; line-height: 1.6;
+}
+.product-modal-specs {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1.2rem; margin-bottom: 1.4rem;
+}
+.product-modal-specs li {
+  display: flex; flex-direction: column; gap: 0.15rem;
+  padding: 0.55rem 0.7rem; border-radius: 8px;
+  background: var(--bg2); border: 1px solid var(--border);
+}
+.product-modal-specs li span.label {
+  font-family: var(--f-accent); font-size: 0.62rem;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--text3);
+}
+.product-modal-specs li span.value {
+  font-size: var(--fs-sm); font-weight: 600; color: var(--text);
+}
+.product-modal-actions {
+  margin-top: auto; display: flex; gap: 0.7rem; flex-wrap: wrap;
+}
+.product-modal-close {
+  position: absolute; top: 0.9rem; right: 0.9rem; z-index: 3;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.9); border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; color: var(--text); line-height: 1;
+  transition: all 0.3s var(--ease);
+}
+.product-modal-close:hover {
+  background: #fff; transform: rotate(90deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+@media (max-width: 720px) {
+  .product-modal-inner { grid-template-columns: 1fr; }
+  .product-modal-media { min-height: 220px; }
+  .product-modal-body { padding: 1.4rem; }
+  .product-modal-specs { grid-template-columns: 1fr; }
+}
+
+  
 /* Stats */
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-2); text-align: center; }
 .stat-item .stat-number {
@@ -645,46 +745,481 @@ h1, h2, h3 {
       <p>Descoperă categoriile de produse din hârtie pentru business-ul tău.</p>
     </div>
     <div class="products-grid reveal">
-      <div class="product-card">
-        <img src="https://www.e-ambalaj.ro/wp-content/uploads/2024/08/Screenshot-2024-08-02-163419.png?w=500&h=375&fit=crop&auto=format" alt="Prosop cel 2 str. Zippa">
-        <div class="product-card-body"><h3>Prosop celuloză 2 straturi | Zippa</h3><p>Super absorbant, celuloză pură</p></div>
-      </div>
-      <div class="product-card">
-        <img src="https://s13emagst.akamaized.net/products/33593/33592371/images/res_e7211efcda3ba1c46d1a6228e11164ab.jpg?width=720&height=720&hash=D7814C0BA5D1D14556130F84D413A43D" alt="Prosop cel 3 str. Pufidik">
-        <div class="product-card-body"><h3>Prosop celuloză 3 straturi | Pufidik</h3><p>3 straturi, densitate crescută</p></div>
-      </div>
-      <div class="product-card">
-        <img src="https://r2.mertecom.ro/media/7642/hartie-igienica-economica-jumbo-300gr-2straturi-0.jpg" alt="Hârtie igienică cel 3 str.">
-        <div class="product-card-body"><h3>Hârtie igienică celuloză 3 straturi</h3><p>Moale, rezistentă, uz casnic</p></div>
-      </div>
-      <div class="product-card">
-        <img src="https://s13emagst.akamaized.net/products/51803/51802408/images/res_10f6c058cd89e4bc5bbea5f7c4218810.jpg?w=500&h=375&fit=crop&auto=format" alt="Hârtie igienică reciclată 2 str.">
-        <div class="product-card-body"><h3>Hârtie igienică reciclată 2 straturi</h3><p>Eco-friendly, rezistență bună</p></div>
-      </div>
-      <div class="product-card">
-        <img src="https://roffice.ro/wp-content/uploads/2025/05/Servetele_vrac_2000buc-2.jpg" alt="Șervețele vrac 25 × 25">
-        <div class="product-card-body"><h3>Șervețele vrac 25 × 25</h3><p>1 strat, pliate, versatile</p></div>
-      </div>
-      <div class="product-card">
-        <img src="https://practiconline.ro/12596-large_default/servetele-albe-vrac-1-strat-2525cm-2000buc.jpg" alt="Șervețele vrac 33 × 33">
-        <div class="product-card-body"><h3>Șervețele vrac 33 × 33</h3><p>Format mare, absorbție bună</p></div>
-      </div>
-      <div class="product-card">
-        <img src="../fisierphoto_servetele-faciale.jpg?w=500&h=375&fit=crop&auto=format" alt="Șervețele faciale">
-        <div class="product-card-body"><h3>Șervețele faciale</h3><p>Ambalaj practic, uz personal</p></div>
-      </div>
-      <div class="product-card">
-        <img src="https://dacris.vtexassets.com/arquivos/ids/156285/Servetele-pliate-V-1-strat-verde-250-bucati-set-0.jpg?v=638962124488370000" alt="Șervețele pliate verzi 1 str.">
-        <div class="product-card-body"><h3>Șervețele pliate verzi 1 strat</h3><p>Ecologice, pentru HoReCa</p></div>
-      </div>
-      <div class="product-card">
-        <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=500&h=375&fit=crop&auto=format" alt="Rolă pat medicală 2 str.">
-        <div class="product-card-body"><h3>Rolă pat medicală 2 straturi</h3><p>Igienă, rezistență, uz profesional</p></div>
-      </div>
+
+  <!-- Card 1 -->
+  <div class="product-card">
+    <img src="https://www.e-ambalaj.ro/wp-content/uploads/2024/08/Screenshot-2024-08-02-163419.png?w=500&h=375&fit=crop&auto=format" alt="Prosop cel 2 str. Zippa">
+    <div class="product-card-body">
+      <h3>Prosop celuloză 2 straturi | Zippa</h3>
+      <p>Super absorbant, celuloză pură</p>
+      <button class="btn-explore" data-modal="modal-1">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="product-card">
+    <img src="https://s13emagst.akamaized.net/products/33593/33592371/images/res_e7211efcda3ba1c46d1a6228e11164ab.jpg?width=720&height=720&hash=D7814C0BA5D1D14556130F84D413A43D" alt="Prosop cel 3 str. Pufidik">
+    <div class="product-card-body">
+      <h3>Prosop celuloză 3 straturi | Pufidik</h3>
+      <p>3 straturi, densitate crescută</p>
+      <button class="btn-explore" data-modal="modal-2">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="product-card">
+    <img src="https://r2.mertecom.ro/media/7642/hartie-igienica-economica-jumbo-300gr-2straturi-0.jpg" alt="Hârtie igienică cel 3 str.">
+    <div class="product-card-body">
+      <h3>Hârtie igienică celuloză 3 straturi</h3>
+      <p>Moale, rezistentă, uz casnic</p>
+      <button class="btn-explore" data-modal="modal-3">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="product-card">
+    <img src="https://s13emagst.akamaized.net/products/51803/51802408/images/res_10f6c058cd89e4bc5bbea5f7c4218810.jpg?w=500&h=375&fit=crop&auto=format" alt="Hârtie igienică reciclată 2 str.">
+    <div class="product-card-body">
+      <h3>Hârtie igienică reciclată 2 straturi</h3>
+      <p>Eco-friendly, rezistență bună</p>
+      <button class="btn-explore" data-modal="modal-4">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="product-card">
+    <img src="https://roffice.ro/wp-content/uploads/2025/05/Servetele_vrac_2000buc-2.jpg" alt="Șervețele vrac 25 × 25">
+    <div class="product-card-body">
+      <h3>Șervețele vrac 25 × 25</h3>
+      <p>1 strat, pliate, versatile</p>
+      <button class="btn-explore" data-modal="modal-5">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="product-card">
+    <img src="https://practiconline.ro/12596-large_default/servetele-albe-vrac-1-strat-2525cm-2000buc.jpg" alt="Șervețele vrac 33 × 33">
+    <div class="product-card-body">
+      <h3>Șervețele vrac 33 × 33</h3>
+      <p>Format mare, absorbție bună</p>
+      <button class="btn-explore" data-modal="modal-6">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="product-card">
+    <img src="../fisierphoto_servetele-faciale.jpg?w=500&h=375&fit=crop&auto=format" alt="Șervețele faciale">
+    <div class="product-card-body">
+      <h3>Șervețele faciale</h3>
+      <p>Ambalaj practic, uz personal</p>
+      <button class="btn-explore" data-modal="modal-7">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="product-card">
+    <img src="https://dacris.vtexassets.com/arquivos/ids/156285/Servetele-pliate-V-1-strat-verde-250-bucati-set-0.jpg?v=638962124488370000" alt="Șervețele pliate verzi 1 str.">
+    <div class="product-card-body">
+      <h3>Șervețele pliate verzi 1 strat</h3>
+      <p>Ecologice, pentru HoReCa</p>
+      <button class="btn-explore" data-modal="modal-8">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 9 -->
+  <div class="product-card">
+    <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=500&h=375&fit=crop&auto=format" alt="Rolă pat medicală 2 str.">
+    <div class="product-card-body">
+      <h3>Rolă pat medicală 2 straturi</h3>
+      <p>Igienă, rezistență, uz profesional</p>
+      <button class="btn-explore" data-modal="modal-9">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 10 -->
+  <div class="product-card">
+    <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=500&h=375&fit=crop&auto=format" alt="Rolă pat medicală 2 str.">
+    <div class="product-card-body">
+      <h3>Rolă pat medicală 2 straturi</h3>
+      <p>Igienă, rezistență, uz profesional</p>
+      <button class="btn-explore" data-modal="modal-10">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 11 -->
+  <div class="product-card">
+    <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=500&h=375&fit=crop&auto=format" alt="Rolă pat medicală 2 str.">
+    <div class="product-card-body">
+      <h3>Rolă pat medicală 2 straturi</h3>
+      <p>Igienă, rezistență, uz profesional</p>
+      <button class="btn-explore" data-modal="modal-11">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 12 -->
+  <div class="product-card">
+    <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=500&h=375&fit=crop&auto=format" alt="Rolă pat medicală 2 str.">
+    <div class="product-card-body">
+      <h3>Rolă pat medicală 2 straturi</h3>
+      <p>Igienă, rezistență, uz profesional</p>
+      <button class="btn-explore" data-modal="modal-12">
+        Explorează toate opțiunile
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
   </div>
 </section>
 
+<!-- ===== Product Modals ===== -->
+
+<!-- Modal 1 -->
+<div class="product-modal" id="modal-1">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://www.e-ambalaj.ro/wp-content/uploads/2024/08/Screenshot-2024-08-02-163419.png?w=900&h=900&fit=crop&auto=format" alt="Prosop celuloză 2 straturi Zippa">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Zippa</span>
+      <h3>Prosop celuloză 2 straturi</h3>
+      <p class="modal-desc">Prosop de hârtie super absorbant, fabricat din celuloză pură de calitate superioară. Structura rezistentă în 2 straturi îl face ideal pentru curățarea rapidă a lichidelor.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">2</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză pură</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">22 × 22 cm</span></li>
+        <li><span class="label">Gramaj</span><span class="value">45 g/mp</span></li>
+        <li><span class="label">Rolă</span><span class="value">2 role / pachet</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">12 pachete / bax</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="product-modal" id="modal-2">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://s13emagst.akamaized.net/products/33593/33592371/images/res_e7211efcda3ba1c46d1a6228e11164ab.jpg?width=900&height=900&hash=D7814C0BA5D1D14556130F84D413A43D" alt="Prosop celuloză 3 straturi Pufidik">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Pufidik</span>
+      <h3>Prosop celuloză 3 straturi</h3>
+      <p class="modal-desc">Rolă de prosop din celuloză pură 100%. Structura în 3 straturi și densitatea crescută oferă absorbție superioară și rezistență în uz casnic sau profesional.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">3</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză 100%</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">23 × 23 cm</span></li>
+        <li><span class="label">Gramaj</span><span class="value">50 g/mp</span></li>
+        <li><span class="label">Rolă</span><span class="value">2 role / pachet</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">12 pachete / bax</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="product-modal" id="modal-3">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://r2.mertecom.ro/media/7642/hartie-igienica-economica-jumbo-300gr-2straturi-0.jpg" alt="Hârtie igienică celuloză 3 straturi">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Igienică</span>
+      <h3>Hârtie igienică celuloză 3 straturi</h3>
+      <p class="modal-desc">Hârtie igienică moale și rezistentă, din celuloză pură, cu 3 straturi pentru confort sporit. Ideală pentru uz casnic și spații comerciale.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">3</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză pură</span></li>
+        <li><span class="label">Foi / rolă</span><span class="value">150</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">10 × 10 cm</span></li>
+        <li><span class="label">Rolă</span><span class="value">8 role / pachet</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">6 pachete / bax</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="product-modal" id="modal-4">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://s13emagst.akamaized.net/products/51803/51802408/images/res_10f6c058cd89e4bc5bbea5f7c4218810.jpg?w=900&h=900&fit=crop&auto=format" alt="Hârtie igienică reciclată 2 straturi">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Eco</span>
+      <h3>Hârtie igienică reciclată 2 straturi</h3>
+      <p class="modal-desc">Varianta eco-friendly, din fibre reciclate, cu rezistență bună și absorbție ridicată. Potrivită pentru spații publice, birouri și HoReCa.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">2</span></li>
+        <li><span class="label">Material</span><span class="value">Fibre reciclate</span></li>
+        <li><span class="label">Foi / rolă</span><span class="value">200</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">10 × 10 cm</span></li>
+        <li><span class="label">Rolă</span><span class="value">8 role / pachet</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">6 pachete / bax</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="product-modal" id="modal-5">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://roffice.ro/wp-content/uploads/2025/05/Servetele_vrac_2000buc-2.jpg" alt="Șervețele vrac 25 × 25">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Șervețele</span>
+      <h3>Șervețele vrac 25 × 25</h3>
+      <p class="modal-desc">Șervețele versatile, pliate, dintr-un singur strat. Ideale pentru restaurante, baruri, evenimente și uz casnic.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">1</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">25 × 25 cm</span></li>
+        <li><span class="label">Buc / pachet</span><span class="value">2000</span></li>
+        <li><span class="label">Culoare</span><span class="value">Alb</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">Vrac</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div class="product-modal" id="modal-6">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://practiconline.ro/12596-large_default/servetele-albe-vrac-1-strat-2525cm-2000buc.jpg" alt="Șervețele vrac 33 × 33">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Șervețele</span>
+      <h3>Șervețele vrac 33 × 33</h3>
+      <p class="modal-desc">Format mare, absorbție bună, potrivite pentru HoReCa și evenimente. Se pot plia și personaliza.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">1</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">33 × 33 cm</span></li>
+        <li><span class="label">Buc / pachet</span><span class="value">2000</span></li>
+        <li><span class="label">Culoare</span><span class="value">Alb</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">Vrac</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 7 -->
+<div class="product-modal" id="modal-7">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="../fisierphoto_servetele-faciale.jpg?w=900&h=900&fit=crop&auto=format" alt="Șervețele faciale">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Faciale</span>
+      <h3>Șervețele faciale</h3>
+      <p class="modal-desc">Șervețele faciale din celuloză, ambalate practic pentru uz personal sau birou. Textură fină, nu irită pielea.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">2</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">20 × 20 cm</span></li>
+        <li><span class="label">Buc / pachet</span><span class="value">100</span></li>
+        <li><span class="label">Culoare</span><span class="value">Alb</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">10 pachete / bax</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 8 -->
+<div class="product-modal" id="modal-8">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://dacris.vtexassets.com/arquivos/ids/156285/Servetele-pliate-V-1-strat-verde-250-bucati-set-0.jpg?v=638962124488370000" alt="Șervețele pliate verzi 1 strat">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">HoReCa</span>
+      <h3>Șervețele pliate verzi 1 strat</h3>
+      <p class="modal-desc">Șervețele pliate, verzi, dintr-un strat. Soluție ecologică și elegantă pentru restaurante, cafenele și evenimente.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">1</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">33 × 33 cm</span></li>
+        <li><span class="label">Buc / set</span><span class="value">250</span></li>
+        <li><span class="label">Culoare</span><span class="value">Verde</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">Set</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 9 -->
+<div class="product-modal" id="modal-9">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=900&h=900&fit=crop&auto=format" alt="Rolă pat medicală 2 straturi">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Medical</span>
+      <h3>Rolă pat medicală 2 straturi</h3>
+      <p class="modal-desc">Rolă de hârtie pentru protecția patului, cu 2 straturi, rezistentă și absorbantă. Ideală pentru cabinete medicale, saloane și spații de îngrijire.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">2</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">49 cm × 100 m</span></li>
+        <li><span class="label">Gramaj</span><span class="value">40 g/mp</span></li>
+        <li><span class="label">Rolă</span><span class="value">1 rolă</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">12 role / bax</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modalele 10, 11, 12 — identice cu modal 9, dar cu id-uri diferite -->
+<div class="product-modal" id="modal-10">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=900&h=900&fit=crop&auto=format" alt="Rolă pat medicală 2 straturi">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Medical</span>
+      <h3>Rolă pat medicală 2 straturi</h3>
+      <p class="modal-desc">Rolă de hârtie pentru protecția patului, cu 2 straturi, rezistentă și absorbantă. Ideală pentru cabinete medicale, saloane și spații de îngrijire.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">2</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">49 cm × 100 m</span></li>
+        <li><span class="label">Gramaj</span><span class="value">40 g/mp</span></li>
+        <li><span class="label">Rolă</span><span class="value">1 rolă</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">12 role / bax</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="product-modal" id="modal-11">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=900&h=900&fit=crop&auto=format" alt="Rolă pat medicală 2 straturi">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Medical</span>
+      <h3>Rolă pat medicală 2 straturi</h3>
+      <p class="modal-desc">Rolă de hârtie pentru protecția patului, cu 2 straturi, rezistentă și absorbantă. Ideală pentru cabinete medicale, saloane și spații de îngrijire.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">2</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">49 cm × 100 m</span></li>
+        <li><span class="label">Gramaj</span><span class="value">40 g/mp</span></li>
+        <li><span class="label">Rolă</span><span class="value">1 rolă</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">12 role / bax</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="product-modal" id="modal-12">
+  <div class="product-modal-inner">
+    <button class="product-modal-close" aria-label="Închide">×</button>
+    <div class="product-modal-media">
+      <img src="https://www.vetro.ro/pub/media/catalog/product/cache/a55131ddd0dba4f99636768543f1ef4d/2/7/2783-49x100__a_cearceaf_din_hartie_pentru_protectie_pat_prima_2_straturi_49cmx100m.jpg?w=900&h=900&fit=crop&auto=format" alt="Rolă pat medicală 2 straturi">
+    </div>
+    <div class="product-modal-body">
+      <span class="modal-tag">Medical</span>
+      <h3>Rolă pat medicală 2 straturi</h3>
+      <p class="modal-desc">Rolă de hârtie pentru protecția patului, cu 2 straturi, rezistentă și absorbantă. Ideală pentru cabinete medicale, saloane și spații de îngrijire.</p>
+      <ul class="product-modal-specs">
+        <li><span class="label">Straturi</span><span class="value">2</span></li>
+        <li><span class="label">Material</span><span class="value">Celuloză</span></li>
+        <li><span class="label">Dimensiuni</span><span class="value">49 cm × 100 m</span></li>
+        <li><span class="label">Gramaj</span><span class="value">40 g/mp</span></li>
+        <li><span class="label">Rolă</span><span class="value">1 rolă</span></li>
+        <li><span class="label">Ambalaj</span><span class="value">12 role / bax</span></li>
+      </ul>
+      <div class="product-modal-actions">
+        <a href="#oferta" class="btn btn-solid">Solicită ofertă</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== End Product Modals ===== -->
+  
 <section class="section section--alt" id="branduri">
   <div class="container">
     <div class="section-head reveal" style="margin:0 auto 2rem;text-align:center;">
@@ -994,6 +1529,43 @@ if (designerContainer) {
     }
   });
 }
+
+// Product Modals
+(function() {
+  var exploreButtons = document.querySelectorAll('.btn-explore');
+  var modals = document.querySelectorAll('.product-modal');
+
+  exploreButtons.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var targetId = this.getAttribute('data-modal');
+      var modal = document.getElementById(targetId);
+      if (modal) {
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  modals.forEach(function(modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal || e.target.classList.contains('product-modal-close')) {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      modals.forEach(function(modal) {
+        modal.classList.remove('is-open');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+})();
+  
 </script>
 </body>
 </html>
